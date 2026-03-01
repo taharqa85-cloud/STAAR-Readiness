@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAAR Readiness — Math & Science for Families</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN: Warm editorial — like a magazine made for parents.
+   Cream backgrounds, deep navy, amber accents. Fraunces serif
+   display pairs with Jakarta Sans body. Feels trustworthy &
+   approachable, not institutional.
+═══════════════════════════════════════════════════════════════ */
+:root {
+  --navy:   #1a2e4a;
+  --navy2:  #243d5e;
+  --blue:   #2563a8;
+  --cream:  #faf7f2;
+  --cream2: #f2ede4;
+  --amber:  #d4820a;
+  --amber2: #fdf0d8;
+  --amber3: #fff8ed;
+  --green:  #1a6b4a;
+  --green2: #e4f4ec;
+  --red:    #b93535;
+  --red2:   #fdeaea;
+  --purple: #5b3591;
+  --purple2:#f0eafb;
+  --teal:   #0e6b6b;
+  --teal2:  #e0f4f4;
+  --white:  #ffffff;
+  --text:   #1a2130;
+  --muted:  #5a6478;
+  --border: #e2d9cc;
+  --shadow: 0 2px 12px rgba(26,46,74,0.10);
+  --shadow-lg: 0 8px 32px rgba(26,46,74,0.15);
+  --r: 14px;
+  --r-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
+.serif { font-family: 'Fraunces', serif; }
+
+/* ── UTILITY ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.tag { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700;
+       letter-spacing: 0.08em; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; }
+.emoji-icon { font-size: 28px; line-height: 1; }
+.hidden { display: none !important; }
+
+/* ── NAVIGATION ── */
+nav {
+  background: var(--navy);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+.nav-inner {
+  display: flex; align-items: center; gap: 16px;
+  padding: 0 20px; height: 60px; max-width: 1100px; margin: 0 auto;
+}
+.nav-logo {
+  font-family: 'Fraunces', serif; font-weight: 900; font-size: 18px;
+  color: white; text-decoration: none; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo span { color: #f4c661; }
+.nav-tabs { display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab {
+  background: none; border: none; color: rgba(255,255,255,0.65);
+  padding: 8px 14px; border-radius: 8px; cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 600;
+  white-space: nowrap; transition: all 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-tab:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-tab.active { color: white; background: rgba(255,255,255,0.18); }
+.nav-search {
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 7px 14px; border-radius: 8px; font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif; width: 160px; outline: none;
+  transition: all 0.2s;
+}
+.nav-search::placeholder { color: rgba(255,255,255,0.45); }
+.nav-search:focus { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); width: 200px; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #2d5a8e 100%);
+  padding: 64px 20px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(244,198,97,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 10% 80%, rgba(37,99,168,0.3) 0%, transparent 50%);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(244,198,97,0.18); border: 1px solid rgba(244,198,97,0.3);
+  color: #f4c661; padding: 6px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 60px); color: white;
+  margin-bottom: 16px; max-width: 720px;
+}
+.hero h1 em { color: #f4c661; font-style: italic; }
+.hero p {
+  font-size: 18px; color: rgba(255,255,255,0.75);
+  max-width: 580px; margin-bottom: 36px; line-height: 1.7;
+}
+.hero-stats {
+  display: flex; gap: 32px; flex-wrap: wrap;
+}
+.hero-stat { text-align: left; }
+.hero-stat-num {
+  font-family: 'Fraunces', serif; font-size: 36px; font-weight: 900;
+  color: #f4c661; line-height: 1;
+}
+.hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.hero-deco {
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-size: 180px; opacity: 0.06; pointer-events: none;
+  font-family: 'Fraunces', serif;
+}
+
+/* ── SUBJECT TABS (main panel) ── */
+.subject-nav {
+  background: var(--white); border-bottom: 2px solid var(--border);
+  position: sticky; top: 60px; z-index: 90;
+}
+.subject-nav-inner {
+  display: flex; gap: 0; max-width: 1100px; margin: 0 auto; padding: 0 20px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.subject-nav-inner::-webkit-scrollbar { display: none; }
+.subj-btn {
+  background: none; border: none; border-bottom: 3px solid transparent;
+  padding: 16px 20px; font-size: 15px; font-weight: 600; cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif; white-space: nowrap;
+  color: var(--muted); transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+}
+.subj-btn:hover { color: var(--navy); }
+.subj-btn.active-math { color: var(--blue); border-bottom-color: var(--blue); }
+.subj-btn.active-science { color: var(--teal); border-bottom-color: var(--teal); }
+
+/* ── MAIN CONTENT ── */
+.main { padding: 40px 20px 80px; }
+
+/* ── SECTION HEADER ── */
+.section-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.section-title { font-size: clamp(24px, 4vw, 32px); color: var(--navy); }
+.section-subtitle { font-size: 15px; color: var(--muted); margin-top: 6px; }
+.teks-count-badge {
+  background: var(--navy); color: white; padding: 6px 14px;
+  border-radius: 20px; font-size: 13px; font-weight: 700; white-space: nowrap;
+  flex-shrink: 0; align-self: flex-start; margin-top: 4px;
+}
+
+/* ── DOMAIN GROUP ── */
+.domain-group { margin-bottom: 48px; }
+.domain-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.domain-icon { font-size: 24px; }
+.domain-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; }
+.domain-count { font-size: 13px; color: var(--muted); margin-left: auto; }
+
+/* ── TEKS CARDS GRID ── */
+.teks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ── TEKS CARD ── */
+.teks-card {
+  background: var(--white); border-radius: var(--r);
+  border: 1.5px solid var(--border); overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.teks-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: transparent; }
+.teks-card-top {
+  padding: 18px 20px 14px;
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.teks-badge {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 13px;
+  padding: 6px 12px; border-radius: 8px; white-space: nowrap; flex-shrink: 0;
+  line-height: 1.2;
+}
+.teks-card-info { flex: 1; min-width: 0; }
+.teks-card-name { font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+.teks-card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.teks-card-footer {
+  border-top: 1px solid var(--border); padding: 10px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--cream);
+}
+.teks-card-footer-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+.teks-card-arrow { font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+.teks-card:hover .teks-card-arrow { transform: translateX(4px); }
+
+/* ── MODAL (TEKS DETAIL) ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(10,18,34,0.6); backdrop-filter: blur(4px);
+  display: flex; align-items: flex-end;
+  opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
+}
+@media (min-width: 640px) {
+  .modal-overlay { align-items: center; justify-content: center; }
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--white); width: 100%; max-width: 680px;
+  max-height: 92vh; overflow-y: auto;
+  border-radius: var(--r) var(--r) 0 0;
+  transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+  position: relative;
+}
+@media (min-width: 640px) {
+  .modal { border-radius: var(--r); transform: translateY(20px) scale(0.97); }
+  .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-drag-handle {
+  width: 40px; height: 4px; background: var(--border); border-radius: 4px;
+  margin: 12px auto 0;
+}
+@media (min-width: 640px) { .modal-drag-handle { display: none; } }
+.modal-header {
+  padding: 20px 24px 0;
+}
+.modal-teks-code {
+  font-family: 'Fraunces', serif; font-size: 13px; font-weight: 700;
+  padding: 5px 12px; border-radius: 6px; display: inline-block; margin-bottom: 10px;
+}
+.modal-title { font-size: clamp(20px, 4vw, 26px); color: var(--navy); margin-bottom: 6px; }
+.modal-subject-tag { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--cream2); border: none; border-radius: 50%;
+  width: 36px; height: 36px; font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); transition: all 0.2s;
+}
+.modal-close:hover { background: var(--border); color: var(--text); }
+.modal-body { padding: 24px; }
+
+/* ── MODAL SECTIONS ── */
+.modal-section { margin-bottom: 20px; border-radius: var(--r-sm); overflow: hidden; }
+.modal-section-label {
+  padding: 8px 16px; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+}
+.modal-section-body { padding: 14px 16px; font-size: 15px; line-height: 1.75; }
+.modal-section-body p { margin-bottom: 10px; }
+.modal-section-body p:last-child { margin-bottom: 0; }
+
+.sec-what .modal-section-label { background: #dbeafe; color: #1e40af; }
+.sec-what .modal-section-body { background: #f0f7ff; }
+.sec-example .modal-section-label { background: #fef3c7; color: #92400e; }
+.sec-example .modal-section-body { background: #fffbf0; }
+.sec-why .modal-section-label { background: #e4f4ec; color: #1a5c3a; }
+.sec-why .modal-section-body { background: #f0fbf5; }
+
+.tip-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.tip-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--cream); border-radius: var(--r-sm);
+  padding: 12px 14px;
+}
+.tip-check { color: var(--green); font-size: 16px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+.tip-text { font-size: 14px; line-height: 1.6; }
+
+.try-this-box {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid #f4c661; border-radius: var(--r-sm);
+  padding: 18px 20px;
+}
+.try-this-label {
+  font-family: 'Fraunces', serif; font-size: 14px; font-weight: 700;
+  color: var(--amber); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.try-this-text { font-size: 14px; line-height: 1.75; }
+
+.modal-section-h { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+
+/* ── MISSED RATE BAR ── */
+.missed-bar-wrap { margin-bottom: 24px; }
+.missed-bar-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.missed-bar-track { height: 10px; background: var(--cream2); border-radius: 5px; overflow: hidden; }
+.missed-bar-fill { height: 100%; border-radius: 5px; transition: width 1s ease; }
+
+/* ── SEARCH RESULTS ── */
+.search-results-header { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.search-results-header strong { color: var(--navy); }
+
+/* ── RESOURCES SECTION ── */
+.resources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.resource-card {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r);
+  padding: 20px; transition: all 0.2s; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.resource-card:hover { box-shadow: var(--shadow); border-color: var(--navy); transform: translateY(-2px); }
+.resource-icon { font-size: 28px; }
+.resource-name { font-weight: 700; font-size: 15px; color: var(--navy); }
+.resource-url { font-size: 12px; color: var(--blue); font-weight: 600; }
+.resource-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.resource-tag { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px; align-self: flex-start; }
+
+/* ── TIPS OVERVIEW PAGE ── */
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.tip-card {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r);
+  padding: 24px; transition: all 0.2s;
+}
+.tip-card:hover { box-shadow: var(--shadow); }
+.tip-card-icon { font-size: 36px; margin-bottom: 12px; }
+.tip-card-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.tip-card-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); color: rgba(255,255,255,0.7);
+  padding: 40px 20px; text-align: center; font-size: 14px;
+}
+footer strong { color: white; }
+
+/* ── FADE IN ANIMATION ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.teks-card { animation: fadeUp 0.4s ease both; }
+.teks-card:nth-child(1) { animation-delay: 0.05s; }
+.teks-card:nth-child(2) { animation-delay: 0.10s; }
+.teks-card:nth-child(3) { animation-delay: 0.15s; }
+.teks-card:nth-child(4) { animation-delay: 0.20s; }
+.teks-card:nth-child(5) { animation-delay: 0.25s; }
+.teks-card:nth-child(6) { animation-delay: 0.30s; }
+
+/* ── MOBILE OPTIMIZATIONS ── */
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px 60px; }
+  .hero-deco { display: none; }
+  .hero-stats { gap: 20px; }
+  .nav-search { display: none; }
+  .teks-grid { grid-template-columns: 1fr; }
+  .modal-body { padding: 16px; }
+  .modal-title { font-size: 20px; }
+  .section-header { flex-direction: column; gap: 8px; }
+  .teks-count-badge { align-self: flex-start; }
+}
+@media (max-width: 400px) {
+  .nav-logo { font-size: 15px; }
+  .nav-tab { font-size: 12px; padding: 7px 10px; }
+}
+
+/* ── LOADING STATE ── */
+.loading-dots {
+  display: flex; gap: 6px; justify-content: center; padding: 60px;
+}
+.loading-dots span {
+  width: 10px; height: 10px; background: var(--navy); border-radius: 50%;
+  animation: bounce 1s ease infinite;
+}
+.loading-dots span:nth-child(2) { animation-delay: 0.15s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.30s; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+/* ── SUBJECT COLOR THEMES ── */
+/* Math */
+.math-badge  { background: #dbeafe; color: #1e40af; }
+.math-accent { color: var(--blue); }
+.math-bg     { background: var(--blue); }
+/* Science - Investigation */
+.sci-inv-badge  { background: #e0f4f4; color: var(--teal); }
+.sci-inv-accent { color: var(--teal); }
+/* Science - Energy */
+.sci-nrg-badge  { background: #fef0d8; color: var(--amber); }
+.sci-nrg-accent { color: var(--amber); }
+/* Science - Ecosystems */
+.sci-eco-badge  { background: var(--green2); color: var(--green); }
+.sci-eco-accent { color: var(--green); }
+/* Science - Earth */
+.sci-earth-badge  { background: var(--purple2); color: var(--purple); }
+.sci-earth-accent { color: var(--purple); }
+
+.nav-math-dot   { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+.nav-sci-dot    { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+
+/* ── MISSED INDICATOR COLORS ── */
+.miss-high   { background: var(--red);    color: white; }
+.miss-medium { background: var(--amber);  color: white; }
+.miss-low    { background: var(--green);  color: white; }
+.miss-high-bar   { background: var(--red); }
+.miss-medium-bar { background: var(--amber); }
+.miss-low-bar    { background: var(--green); }
+
+/* ── BACK TO TOP ── */
+#back-top {
+  position: fixed; bottom: 20px; right: 20px; z-index: 150;
+  background: var(--navy); color: white; border: none; border-radius: 50%;
+  width: 44px; height: 44px; font-size: 18px; cursor: pointer;
+  box-shadow: var(--shadow-lg); transition: all 0.2s; opacity: 0; transform: scale(0.8);
+}
+#back-top.visible { opacity: 1; transform: scale(1); }
+#back-top:hover { background: var(--blue); transform: scale(1.1); }
+
+/* ── HIGHLIGHT on search ── */
+.hl { background: #fef9c3; border-radius: 3px; padding: 0 2px; }
+
+/* ── TABS PANEL CONTENT ── */
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ── QUESTION GENERATOR ── */
+.qgen-section {
+  margin-top: 32px; border-top: 2px solid var(--border); padding-top: 28px;
+}
+.qgen-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.qgen-title {
+  font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700;
+  color: var(--navy); display: flex; align-items: center; gap: 8px;
+}
+.qgen-controls { display: flex; gap: 8px; flex-wrap: wrap; }
+.qgen-btn {
+  border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.qgen-btn-primary { background: var(--navy); color: white; }
+.qgen-btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
+.qgen-btn-secondary { background: var(--cream2); color: var(--navy); border: 1px solid var(--border); }
+.qgen-btn-secondary:hover { background: var(--border); }
+
+.question-card {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r-sm);
+  margin-bottom: 16px; overflow: hidden; transition: box-shadow 0.2s;
+}
+.question-card:hover { box-shadow: var(--shadow); }
+.question-top {
+  padding: 16px 18px;
+}
+.question-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; background: var(--navy); color: white;
+  border-radius: 50%; font-size: 12px; font-weight: 700; flex-shrink: 0;
+  margin-right: 10px; vertical-align: middle;
+}
+.question-type-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle;
+}
+.qtype-mc  { background: #dbeafe; color: #1e40af; }
+.qtype-oe  { background: #e4f4ec; color: #1a6b4a; }
+.qtype-tf  { background: #fef0d8; color: #d4820a; }
+.qtype-fr  { background: #f0eafb; color: #5b3591; }
+
+.question-text {
+  font-size: 15px; line-height: 1.7; color: var(--text);
+  margin-top: 10px; font-weight: 500;
+}
+.mc-options { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.mc-option {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--cream); border: 1.5px solid var(--border); border-radius: var(--r-sm);
+  padding: 10px 14px; cursor: pointer; transition: all 0.2s; font-size: 14px;
+  text-align: left; width: 100%; font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.mc-option:hover { border-color: var(--navy); background: #eef3ff; }
+.mc-option.correct { border-color: var(--green); background: var(--green2); }
+.mc-option.wrong   { border-color: var(--red); background: var(--red2); }
+.mc-option.reveal  { border-color: var(--green); background: var(--green2); }
+.mc-letter {
+  font-weight: 700; color: var(--navy); min-width: 20px; font-size: 14px; flex-shrink: 0;
+}
+
+.answer-key-toggle {
+  width: 100%; padding: 12px 18px; background: var(--cream2);
+  border: none; border-top: 1.5px solid var(--border); cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 600;
+  color: var(--muted); display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.2s; text-align: left;
+}
+.answer-key-toggle:hover { background: var(--border); color: var(--navy); }
+.answer-key-toggle.revealed { background: #e6f4ec; color: var(--green); border-top-color: #b6e0c8; }
+.answer-key-toggle .chevron { transition: transform 0.3s; font-size: 16px; }
+.answer-key-toggle.revealed .chevron { transform: rotate(180deg); }
+
+.answer-key-body {
+  display: none; padding: 16px 18px;
+  background: linear-gradient(135deg, #f0fbf5, #e6f4ec);
+  border-top: 1px solid #b6e0c8;
+}
+.answer-key-body.open { display: block; }
+.answer-correct-label {
+  font-weight: 700; color: var(--green); font-size: 13px;
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.answer-steps { display: flex; flex-direction: column; gap: 10px; }
+.answer-step {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.step-num {
+  min-width: 24px; height: 24px; background: var(--green); color: white;
+  border-radius: 50%; font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.step-text { font-size: 14px; line-height: 1.65; color: var(--text); }
+.step-text strong { color: var(--navy); }
+.answer-final {
+  margin-top: 12px; padding: 10px 14px;
+  background: white; border-radius: var(--r-sm); border-left: 4px solid var(--green);
+  font-size: 14px; font-weight: 600; color: var(--green);
+}
+
+/* Loading spinner for questions */
+.q-loading { text-align: center; padding: 32px; color: var(--muted); font-size: 14px; }
+.q-loading-spin { display: inline-block; font-size: 24px; animation: spin 1s linear infinite; }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+/* Question section tabs inside modal */
+.modal-tab-bar {
+  display: flex; border-bottom: 2px solid var(--border); margin: 0 -24px 0;
+  padding: 0 24px; gap: 0;
+}
+.modal-tab {
+  background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px;
+  padding: 10px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif; color: var(--muted); transition: all 0.2s;
+  white-space: nowrap;
+}
+.modal-tab:hover { color: var(--navy); }
+.modal-tab.active { color: var(--navy); border-bottom-color: var(--navy); }
+.modal-tab-content { display: none; padding-top: 20px; }
+.modal-tab-content.active { display: block; }
+
+@media (max-width: 640px) {
+  .qgen-header { flex-direction: column; align-items: flex-start; }
+  .mc-option { font-size: 13px; }
+  .question-text { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">
+      🎯 <span>STAAR</span>&nbsp;Readiness
+    </a>
+    <div class="nav-tabs" id="mainTabs">
+      <button class="nav-tab active" data-panel="math" onclick="switchPanel('math',this)">
+        <div class="nav-math-dot"></div> Math TEKS
+      </button>
+      <button class="nav-tab" data-panel="science" onclick="switchPanel('science',this)">
+        <div class="nav-sci-dot"></div> Science TEKS
+      </button>
+      <button class="nav-tab" data-panel="tips" onclick="switchPanel('tips',this)">
+        💡 Home Tips
+      </button>
+      <button class="nav-tab" data-panel="resources" onclick="switchPanel('resources',this)">
+        🔗 Resources
+      </button>
+    </div>
+    <input class="nav-search" type="search" placeholder="🔍 Search TEKS…" id="globalSearch" oninput="handleSearch(this.value)" />
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">🎯 STAAR Readiness · 5th Grade Math & Science</div>
+    <h1><em>STAAR Readiness</em> for<br>Math &amp; Science</h1>
+    <p>Plain-language explanations of every tested TEKS — with real-world examples, home activities, practice questions, and step-by-step answer keys.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">Math Standards</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">19</div>
+        <div class="hero-stat-label">Science Standards</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">93+</div>
+        <div class="hero-stat-label">Practice Questions</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">31</div>
+        <div class="hero-stat-label">Step-by-Step Answer Keys</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-deco">📖</div>
+</section>
+
+<!-- SUBJECT TABS -->
+<div class="subject-nav" id="subjectNav">
+  <div class="subject-nav-inner">
+    <button class="subj-btn active-math" id="mathBtn" onclick="switchPanel('math',null)">📐 Math</button>
+    <button class="subj-btn" id="scienceBtn" onclick="switchPanel('science',null)">🔬 Science</button>
+    <button class="subj-btn" id="tipsBtn" onclick="switchPanel('tips',null)">💡 Tips</button>
+    <button class="subj-btn" id="resourcesBtn" onclick="switchPanel('resources',null)">🔗 Resources</button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main" id="mainContent">
+  <div class="container">
+
+    <!-- SEARCH RESULTS -->
+    <div id="searchPanel" class="panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Search Results</h2>
+          <p class="section-subtitle" id="searchStatus">Showing results for your query</p>
+        </div>
+      </div>
+      <div class="teks-grid" id="searchGrid"></div>
+    </div>
+
+    <!-- ═══════════ MATH PANEL ═══════════ -->
+    <div id="mathPanel" class="panel active">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">5th Grade Math Standards</h2>
+          <p class="section-subtitle">Click any card to see a full explanation, real-world examples, and activities you can do at home tonight.</p>
+        </div>
+        <span class="teks-count-badge">12 TEKS</span>
+      </div>
+
+      <!-- DOMAIN: Number & Decimals -->
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">🔢</span>
+          <h3 class="domain-name">Numbers & Decimals</h3>
+          <span class="domain-count">3 standards</span>
+        </div>
+        <div class="teks-grid" id="mathGrid1"></div>
+      </div>
+
+      <!-- DOMAIN: Operations -->
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">➗</span>
+          <h3 class="domain-name">Multiplication, Division & Fractions</h3>
+          <span class="domain-count">7 standards</span>
+        </div>
+        <div class="teks-grid" id="mathGrid2"></div>
+      </div>
+
+      <!-- DOMAIN: Problem Solving -->
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">🧩</span>
+          <h3 class="domain-name">Problem Solving & Reasoning</h3>
+          <span class="domain-count">2 standards</span>
+        </div>
+        <div class="teks-grid" id="mathGrid3"></div>
+      </div>
+    </div>
+
+    <!-- ═══════════ SCIENCE PANEL ═══════════ -->
+    <div id="sciencePanel" class="panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">5th Grade Science Standards</h2>
+          <p class="section-subtitle">Explore all 19 science standards across four domains — from lab skills to earth science.</p>
+        </div>
+        <span class="teks-count-badge">19 TEKS</span>
+      </div>
+
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">🧪</span>
+          <h3 class="domain-name">Science Investigation Skills</h3>
+          <span class="domain-count">6 standards</span>
+        </div>
+        <div class="teks-grid" id="sciGrid1"></div>
+      </div>
+
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">⚡</span>
+          <h3 class="domain-name">Energy & Matter</h3>
+          <span class="domain-count">4 standards</span>
+        </div>
+        <div class="teks-grid" id="sciGrid2"></div>
+      </div>
+
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">🌿</span>
+          <h3 class="domain-name">Ecosystems & Living Systems</h3>
+          <span class="domain-count">4 standards</span>
+        </div>
+        <div class="teks-grid" id="sciGrid3"></div>
+      </div>
+
+      <div class="domain-group">
+        <div class="domain-header">
+          <span class="domain-icon">🌍</span>
+          <h3 class="domain-name">Earth Science</h3>
+          <span class="domain-count">5 standards</span>
+        </div>
+        <div class="teks-grid" id="sciGrid4"></div>
+      </div>
+    </div>
+
+    <!-- ═══════════ TIPS PANEL ═══════════ -->
+    <div id="tipsPanel" class="panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Supporting Your Child at Home</h2>
+          <p class="section-subtitle">You don't need a teaching degree — just a few minutes and genuine curiosity. Here's what actually works.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-card-icon">🤔</div>
+          <div class="tip-card-title">Ask "I Wonder…" Questions</div>
+          <div class="tip-card-body">When you say "I wonder why the sky turns pink at sunset?" you're modeling exactly the thinking scientists and mathematicians use. Curiosity is contagious — share yours openly.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">🍳</div>
+          <div class="tip-card-title">Connect Learning to Daily Life</div>
+          <div class="tip-card-body">Math is in every recipe, every store receipt, and every sports score. Science is in cooking, weather, and the garden. Point it out! "Hey, this is just like what you learned about fractions!"</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">🎯</div>
+          <div class="tip-card-title">Let Them Be Wrong</div>
+          <div class="tip-card-body">Scientists and mathematicians are wrong constantly — that's how learning works. When your child makes a wrong prediction, celebrate it: "Great hypothesis! Let's see what actually happens."</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">👂</div>
+          <div class="tip-card-title">Ask Them to Teach You</div>
+          <div class="tip-card-body">Teaching is one of the most powerful ways to learn. Ask: "Can you explain what you learned in science today?" Even if they struggle, the act of explaining builds deeper understanding.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">📺</div>
+          <div class="tip-card-title">Watch Science & Math Videos</div>
+          <div class="tip-card-body">Khan Academy, Crash Course Kids, and National Geographic Kids have free, engaging videos for every TEKS. One video per week while eating dinner can make a real difference.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">🗓️</div>
+          <div class="tip-card-title">Do the "Try This Tonight" Activities</div>
+          <div class="tip-card-body">Each TEKS card has a quick activity designed for home. They take 5–15 minutes and require no supplies beyond what you already have. Tap any card to find them.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">📰</div>
+          <div class="tip-card-title">Read Science News Together</div>
+          <div class="tip-card-body">Newsela and Science News for Students post current discoveries in student-friendly language. Reading together and discussing "What do you think about this?" builds critical thinking.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">🎒</div>
+          <div class="tip-card-title">Stay in Touch with the Teacher</div>
+          <div class="tip-card-body">If your child is struggling with a specific standard, let us know. We can share exactly which TEKS to focus on at home and provide extra practice materials on request.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card-icon">⭐</div>
+          <div class="tip-card-title">Celebrate Progress, Not Just Scores</div>
+          <div class="tip-card-body">Did your child understand something they didn't last week? That growth matters more than a single test grade. Saying "I noticed you really understand fractions now — that's hard work!" goes a long way.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ RESOURCES PANEL ═══════════ -->
+    <div id="resourcesPanel" class="panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Free Learning Resources</h2>
+          <p class="section-subtitle">All free. All excellent. No sign-up required for most of them.</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a class="resource-card" href="https://khanacademy.org" target="_blank" rel="noopener">
+          <div class="resource-icon">🎓</div>
+          <div class="resource-name">Khan Academy</div>
+          <div class="resource-url">khanacademy.org</div>
+          <span class="resource-tag" style="background:#dbeafe;color:#1e40af;">Math & Science</span>
+          <div class="resource-desc">Free video lessons and practice problems for every 5th grade standard. Track your child's progress with a free account.</div>
+        </a>
+        <a class="resource-card" href="https://kids.nationalgeographic.com" target="_blank" rel="noopener">
+          <div class="resource-icon">🌍</div>
+          <div class="resource-name">National Geographic Kids</div>
+          <div class="resource-url">kids.nationalgeographic.com</div>
+          <span class="resource-tag" style="background:#e0f4f4;color:#0e6b6b;">Science</span>
+          <div class="resource-desc">Articles, videos, and photos about animals, ecosystems, weather, and Earth science — written for kids.</div>
+        </a>
+        <a class="resource-card" href="https://www.youtube.com/@CrashCourseKids" target="_blank" rel="noopener">
+          <div class="resource-icon">📹</div>
+          <div class="resource-name">Crash Course Kids</div>
+          <div class="resource-url">youtube.com/@CrashCourseKids</div>
+          <span class="resource-tag" style="background:#e0f4f4;color:#0e6b6b;">Science</span>
+          <div class="resource-desc">Short, fun YouTube videos covering ecosystems, energy, earth science, and more. Perfect for quick learning sessions.</div>
+        </a>
+        <a class="resource-card" href="https://sciencenewsforstudents.org" target="_blank" rel="noopener">
+          <div class="resource-icon">📰</div>
+          <div class="resource-name">Science News for Students</div>
+          <div class="resource-url">sciencenewsforstudents.org</div>
+          <span class="resource-tag" style="background:#e0f4f4;color:#0e6b6b;">Science</span>
+          <div class="resource-desc">Real science discoveries written for students. Great for reading together and discussing current events in science.</div>
+        </a>
+        <a class="resource-card" href="https://mysteryscience.com" target="_blank" rel="noopener">
+          <div class="resource-icon">🔬</div>
+          <div class="resource-name">Mystery Science</div>
+          <div class="resource-url">mysteryscience.com</div>
+          <span class="resource-tag" style="background:#e0f4f4;color:#0e6b6b;">Science</span>
+          <div class="resource-desc">Engaging science lessons for grades K–5. Free lessons available. Designed for curious, hands-on learners.</div>
+        </a>
+        <a class="resource-card" href="https://prodigygame.com" target="_blank" rel="noopener">
+          <div class="resource-icon">🎮</div>
+          <div class="resource-name">Prodigy Math</div>
+          <div class="resource-url">prodigygame.com</div>
+          <span class="resource-tag" style="background:#dbeafe;color:#1e40af;">Math</span>
+          <div class="resource-desc">Math game that adapts to your child's level. Free to play — kids love it because it feels like a video game.</div>
+        </a>
+        <a class="resource-card" href="https://ixl.com" target="_blank" rel="noopener">
+          <div class="resource-icon">📊</div>
+          <div class="resource-name">IXL Learning</div>
+          <div class="resource-url">ixl.com</div>
+          <span class="resource-tag" style="background:#dbeafe;color:#1e40af;">Math & Science</span>
+          <div class="resource-desc">Practice problems aligned directly to Texas TEKS. Shows exactly which standards need more work. Free daily practice limit.</div>
+        </a>
+        <a class="resource-card" href="https://nasa.gov/students" target="_blank" rel="noopener">
+          <div class="resource-icon">🚀</div>
+          <div class="resource-name">NASA for Students</div>
+          <div class="resource-url">nasa.gov/students</div>
+          <span class="resource-tag" style="background:#e0f4f4;color:#0e6b6b;">Science</span>
+          <div class="resource-desc">NASA's student site with Earth and space science content, interactive tools, and videos. Incredible for Earth science TEKS.</div>
+        </a>
+        <a class="resource-card" href="https://newsela.com" target="_blank" rel="noopener">
+          <div class="resource-icon">📖</div>
+          <div class="resource-name">Newsela</div>
+          <div class="resource-url">newsela.com</div>
+          <span class="resource-tag" style="background:#f0eafb;color:#5b3591;">Reading + Science</span>
+          <div class="resource-desc">Current events articles at adjustable reading levels. Great for building science vocabulary and reading comprehension together.</div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</main>
+
+<!-- TEKS DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-drag-handle"></div>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+    <div class="modal-header">
+      <div class="modal-teks-code" id="modalCode"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-subject-tag" id="modalSubject"></div>
+    </div>
+    <div style="padding: 0 24px;">
+      <div class="modal-tab-bar">
+        <button class="modal-tab active" onclick="switchModalTab('learn',this)">📖 Learn</button>
+        <button class="modal-tab" onclick="switchModalTab('practice',this)">✏️ Practice Questions</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="modalLearnTab" class="modal-tab-content active">
+        <div id="modalLearnBody"></div>
+      </div>
+      <div id="modalPracticeTab" class="modal-tab-content">
+        <div id="modalPracticeBody"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>5th Grade Learning Hub</strong> — Made with ❤️ for our school families</p>
+  <p style="margin-top:8px;font-size:12px;">All content aligned to Texas Essential Knowledge & Skills (TEKS) · 2025–2026</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   ALL TEKS DATA
+═══════════════════════════════════════════════════════ */
+const MATH_TEKS = [
+  // ── Domain 1: Numbers & Decimals ──
+  {
+    code:'5.2.A', name:'Place Value of Decimals', domain:1,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 28, // class average missed rate
+    subject:'📐 Math · Numbers & Decimals',
+    desc:'Understanding the value of each digit in a decimal number to the thousandths place.',
+    what:'Your child needs to understand that in a decimal number like 3.456, the 4 is in the tenths place (worth 4/10), the 5 is in the hundredths place (worth 5/100), and the 6 is in the thousandths place (worth 6/1000). Each place to the right is 10 times smaller.',
+    example:'Think of money! $3.45 means 3 dollars, 4 dimes, and 5 pennies. Your child extends this idea — if we had mills (thousandths), $3.456 would be 3 dollars, 4 dimes, 5 pennies, and 6 mills. The place you\'re in tells you what the digit is worth.',
+    why:'Place value is the foundation of all number sense. Without it, students can\'t compare, round, add, or multiply decimals correctly. It also builds into scientific measurements, money, and percentages.',
+    tips:['Count money together: "That\'s 4 dimes and 7 pennies — so what decimal is that?"','Read a thermometer, scale, or measuring cup with decimal values — point out each place','Ask: "In 12.374, what is the value of the 3? What about the 7?"','Use graph paper to draw place value grids — thousandths are tiny boxes!'],
+    tryThis:'Get a bag of coins. Take out any combination and write the dollar amount as a decimal together: $0.___. Then: "What digit is in the tenths place? The hundredths?" Now make the largest and smallest decimals you can with those digits.'
+  },
+  {
+    code:'5.2.B', name:'Comparing & Ordering Decimals', domain:1,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 51,
+    subject:'📐 Math · Numbers & Decimals',
+    desc:'Comparing and ordering decimal numbers to the thousandths place using >, <, and = symbols.',
+    what:'Your child needs to compare decimals like 0.45 vs. 0.405 and correctly say 0.45 > 0.405. The trick is to compare place by place from left to right — don\'t be fooled by the number of digits! 0.45 = 0.450, which is bigger than 0.405 because 5 > 0 in the hundredths place.',
+    example:'At a swim meet, times matter in hundredths of seconds. If Maya swam 24.350 seconds and Jordan swam 24.305 seconds — who was faster? Jordan! 24.305 < 24.350 because in the hundredths place, 0 < 5. Your child needs this exact skill.',
+    why:'This skill connects to every real-world measurement: race times, batting averages, gas prices, grades as percentages. Misreading decimals leads to costly mistakes in everyday life.',
+    tips:['Compare gas prices together: "Which station is cheaper: $3.459 or $3.45?"','Line up decimal points on paper — this helps students compare column by column','Reminder: 0.9 is bigger than 0.09, even though 9 "looks" the same in both','Play "bigger or smaller?" — call out two decimals and take turns answering'],
+    tryThis:'Look at food nutrition labels together. Find two similar foods (like two cereals) and compare their sodium or sugar content as decimals. "Which has MORE? How do you know? Let\'s line up the decimal points and compare each place."'
+  },
+  {
+    code:'5.2.C', name:'Rounding Decimals', domain:1,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 53,
+    subject:'📐 Math · Numbers & Decimals',
+    desc:'Rounding decimal numbers to the tenths or hundredths place.',
+    what:'Rounding means finding the nearest "cleaner" number. To round 3.467 to the nearest tenth: look at the hundredths digit (6). Since 6 ≥ 5, round UP — answer is 3.5. To round to hundredths: look at the thousandths digit (7). Since 7 ≥ 5, round UP — answer is 3.47.',
+    example:'Gasoline: 1 gallon costs $3.479. The pump rounds to $3.48 per gallon. Weather: the temperature is 72.3°F — we might say "about 72°." Your child needs to apply this automatically in everyday situations.',
+    why:'Rounding is used constantly: in estimates, science measurements, money, sports statistics, and when checking if an answer is reasonable. It\'s also foundational to understanding significant figures in higher-level science.',
+    tips:['Mnemonic: "5 or more, let it soar (round up). 4 or less, let it rest (round down)."','Practice with prices: "The item is $4.276 — would we pay $4.27 or $4.28?"','Round grocery totals: "About how much do these 3 items cost together?"','Ask: "Which digit do I need to look at to round to the tenths place?"'],
+    tryThis:'"The Price is Right" game: look up prices of 5 items online. Write them down with 3 decimal places (e.g., $2.679). Take turns rounding each to the nearest cent (hundredths). Check: does rounded price × 3 items ≈ your estimated total?'
+  },
+
+  // ── Domain 2: Operations ──
+  {
+    code:'5.3.A', name:'Estimation & Reasonableness', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 38,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Using estimation and rounding to determine if an answer is reasonable.',
+    what:'Before solving a problem, your child should estimate the answer — and after solving, check: "Does this make sense?" If they\'re dividing 456 by 4 and get 1,140, they should know something\'s wrong: 400÷4=100, so the answer should be close to 100, not over 1,000.',
+    example:'"I bought 6 shirts for $19.95 each. About how much did I spend?" A quick estimate: 6 × $20 = $120. The exact answer should be close to $120. If your calculator says $1,197, something went wrong. Estimation catches those errors!',
+    why:'Estimation is a life skill used every day: budgeting, cooking, driving time, and making quick decisions. It also teaches number sense — the gut-feel for whether numbers make sense.',
+    tips:['Always ask: "About what should the answer be?" before solving','Practice mental math: "What\'s 4 × 50? 7 × 300?" These build estimation speed','When your child gets an answer, ask: "Does that seem right? Is it too big or too small?"','Estimate grocery totals — round each item to the nearest dollar'],
+    tryThis:'"Estimation bowling." Name a multiplication or division problem (e.g., 38 × 52). Each person writes an estimate. Then calculate the exact answer. Score points based on how close you were. Closest estimate wins the round!'
+  },
+  {
+    code:'5.3.B', name:'Multiplying Large Numbers', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 22,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Multiplying 3-digit numbers by 2-digit numbers fluently.',
+    what:'Your child needs to multiply numbers like 347 × 68 correctly and fairly quickly. This means knowing the standard multiplication algorithm (stacking numbers and multiplying each digit) and applying it without errors — including carrying correctly.',
+    example:'A factory makes 342 toys per day. How many does it make in 25 days? 342 × 25. Your child breaks this down: 342×5=1,710 and 342×20=6,840, then adds: 1,710+6,840=8,550 toys. This kind of calculation comes up everywhere in real life.',
+    why:'Multiplication fluency is the gateway to algebra, science formulas, and almost every mathematical concept in middle school. Speed and accuracy here saves cognitive energy for harder thinking later.',
+    tips:['Practice times tables — especially 6s, 7s, 8s, and 9s, which are hardest','Check work by estimating first: 347×68 ≈ 350×70 = 24,500. Did your child get close?','Do "box method" or area model if the standard algorithm is confusing','Play multiplication games together — apps like Prodigy or Kahoot work great'],
+    tryThis:'"Real math at the store." At the grocery store: "If eggs cost $3.29 a dozen and we want 3 dozen, about how much? Now let\'s find the exact amount." Or: "This 24-pack costs $4.56. What would 3 of them cost?" Use a calculator to check.'
+  },
+  {
+    code:'5.3.C', name:'Long Division', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 31,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Solving division problems with 4-digit dividends and 2-digit divisors.',
+    what:'Your child needs to divide numbers like 4,536 ÷ 28 using long division. This requires knowing the steps: Divide, Multiply, Subtract, Bring Down — and repeating until there\'s no remainder. It also requires strong multiplication and subtraction skills.',
+    example:'A school orders 2,184 pencils for 24 classrooms. How many pencils does each classroom get? 2,184 ÷ 24 = 91 pencils per class. Your child needs to solve this systematically without a calculator.',
+    why:'Long division develops patience, multi-step thinking, and error-checking — skills that transfer to algebra, fractions, and real-world problem solving. It also strengthens multiplication and subtraction as side effects.',
+    tips:['DMSBR — "Does McDonald\'s Sell Burgers? Rarely." (Divide, Multiply, Subtract, Bring down, Repeat)','Check the answer by multiplying back: if 2184÷24=91, then 91×24 should equal 2184','Practice with "friendly" numbers first: 5, 10, 25, 50, 100 as divisors','If your child gets stuck, try easier problems and build up to harder ones'],
+    tryThis:'"Fair share" challenges. Plan a party: "We have 336 pieces of candy for 24 kids — how many per kid? With 1,248 plates to stack in 48 packages — how many per package?" Real-context division feels more meaningful than worksheet problems.'
+  },
+  {
+    code:'5.3.D', name:'Area Models for Division', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 63,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Representing and solving division problems using area models (rectangular arrays).',
+    what:'Instead of using the long division algorithm, your child divides by drawing a rectangle and breaking the dividend into friendly chunks. To solve 432 ÷ 16: break 432 into 320 + 112. Draw boxes: 320÷16=20 and 112÷16=7. Add the partial quotients: 20+7=27. Answer: 27.',
+    example:'Think of a rectangular garden: 432 square feet total, 16 feet wide. How long is it? Using an area model, you\'d sketch the garden and find that 16×27=432. The area model makes the problem visual — which helps many learners.',
+    why:'Area models build deep conceptual understanding of what division MEANS, not just how to compute it. Students who understand area models also understand multiplication, fractions, and later, polynomial factoring in algebra.',
+    tips:['Draw it on graph paper — seeing the rectangle really helps it click','Start with easier numbers: 120÷10, then 240÷12, then bigger','The partial quotients method (the numbers on top of each box) is the key idea','Look for videos titled "area model division 5th grade" — seeing it animated helps'],
+    tryThis:'"Draw my division." Give your child a division problem: 504 ÷ 18. Ask them to draw the area model on paper (or a whiteboard). Watch them decompose 504 into chunks. Ask: "Why did you choose those numbers?" Understanding their choices = understanding the math.'
+  },
+  {
+    code:'5.3.E', name:'Decimal Division', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 30,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Solving division problems where answers are decimals to the hundredths place.',
+    what:'When dividing doesn\'t come out evenly, your child extends the answer with a decimal point. For 27 ÷ 4: instead of stopping at remainder 3, they continue: 3.00 ÷ 4 = 0.75. So 27 ÷ 4 = 6.75. They need to write the answer as a decimal, not as "6 remainder 3."',
+    example:'You buy a pizza for $14.50 and split it equally among 4 friends. How much does each person pay? $14.50 ÷ 4 = $3.625 → round to $3.63. Decimal division is essential for splitting bills, calculating unit prices, and any real-world division.',
+    why:'Decimal quotients connect division to fractions, percentages, and real-world measurement. Without this skill, students can\'t solve most practical math problems or understand unit rates in science.',
+    tips:['When division doesn\'t come out evenly: add ".00" after the remainder and keep going','Practice with money: "Three friends split $8.73 equally — how much each?"','Unit pricing at the store: "This 6-pack costs $4.98. What\'s the price per item?"','Double-check by multiplying back: if 14.50÷4=3.625, then 3.625×4 should = 14.50'],
+    tryThis:'Next time you pay a restaurant bill, let your child figure out the split: "The bill is $38.40 for 4 people. How much does each person owe?" Include tip if you\'d like! This is exactly the kind of real decimal division your child is learning.'
+  },
+  {
+    code:'5.3.F', name:'Simplifying Fractions', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 26,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Reducing fractions to their simplest (lowest) terms.',
+    what:'A fraction is in "simplest form" when the top and bottom numbers share no common factor other than 1. To simplify 12/18: find the greatest common factor of 12 and 18, which is 6. Divide both by 6: 12÷6=2 and 18÷6=3. Simplified: 2/3.',
+    example:'You cut a pizza into 12 slices and eat 8. You ate 8/12 of the pizza. Simplified: 8÷4=2 and 12÷4=3 → you ate 2/3 of the pizza. "Two-thirds" is much easier to understand than "eight-twelfths," even though they mean the same thing.',
+    why:'Simplifying fractions makes them easier to compare, add, and multiply. It\'s also required for most fraction problems to be fully correct — teachers mark answers wrong if they\'re not in simplest form.',
+    tips:['Trick: keep dividing by small primes (2, 3, 5) until you can\'t anymore','Or find the GCF (Greatest Common Factor) and divide both numbers by it at once','Ask: "Can both numbers be divided by 2? By 3? By 5?" — check each one','Factors flashcard game: practice listing factors of numbers 1–24'],
+    tryThis:'"Fraction hunt." Cut paper into different fractions and lay them out. Ask: "Is 6/8 the same amount as 3/4?" Fold the paper pieces and see if they match. This makes simplification tangible — the fraction is the same SIZE, just written differently.'
+  },
+  {
+    code:'5.3.G', name:'Adding & Subtracting Fractions', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 25,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Adding and subtracting fractions with different (unlike) denominators.',
+    what:'When the bottoms of two fractions are different, you can\'t add them directly. First, find a common denominator. Example: 1/3 + 1/4. The LCD is 12. Convert: 4/12 + 3/12 = 7/12. Your child needs to find the LCD, convert both fractions, then add or subtract the tops.',
+    example:'"We walked 3/4 of a mile to school and 2/3 of a mile to the park. How far did we walk total?" 3/4 + 2/3: LCD is 12. 9/12 + 8/12 = 17/12 = 1 and 5/12 miles. This type of real-world fraction problem is on every test.',
+    why:'Fraction addition and subtraction are foundational for algebra, cooking measurements, and any situation involving parts of a whole. Understanding fractions is one of the strongest predictors of math success in middle school.',
+    tips:['The LCD (Least Common Denominator) is the smallest number both denominators divide into evenly','Find the LCD: list multiples of each denominator until one matches — that\'s your LCD','Multiply both the numerator AND denominator by the same number to convert','Check with a visual: draw fraction bars to see if the answer looks right'],
+    tryThis:'"Cooking fractions." Find a recipe together. Double it (multiply each fraction by 2) or halve it (divide each fraction by 2). You\'ll naturally encounter unlike denominators. "We need 3/4 cup + 1/3 cup of flour. How much is that? Let\'s find out!"'
+  },
+  {
+    code:'5.3.K', name:'Mixed Number Operations', domain:2,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 35,
+    subject:'📐 Math · Multiplication, Division & Fractions',
+    desc:'Adding and subtracting mixed numbers (whole numbers combined with fractions).',
+    what:'Mixed numbers like 2½ or 3¾ combine whole numbers with fractions. To add 2⅓ + 1¾: convert both fractions to the same denominator (LCD=12), then add: 2 4/12 + 1 9/12 = 3 13/12 = 4 1/12. Your child also needs to "borrow" from the whole number when subtracting.',
+    example:'"A carpenter had 5¼ feet of wood. She cut off 2⅔ feet. How much is left?" 5¼ − 2⅔: LCD=12, 5 3/12 − 2 8/12. Since 3 < 8, she borrows: 4 15/12 − 2 8/12 = 2 7/12 feet. This level of precision appears in construction, cooking, and sewing.',
+    why:'Mixed numbers are the most common form of fractions in real life — recipes, measurements, and distances are rarely whole numbers or simple fractions. Mastering these is essential for practical math.',
+    tips:['First find a common denominator, THEN deal with the whole numbers','When subtracting and the fraction part is "too small," borrow 1 from the whole number (1 = whatever/whatever)','Always check: convert your answer to a mixed number if it\'s an improper fraction','Estimate first: 2⅓ + 1¾ ≈ 2 + 2 = 4. So the answer should be close to 4.'],
+    tryThis:'"Kitchen measurement challenge." Get measuring cups and spoons. Pour 1¾ cups water + 2½ cups water into a bowl. How much total? Now pour out 1⅔ cups. How much is left? Do the math first, then actually measure to see if you\'re right!'
+  },
+
+  // ── Domain 3: Problem Solving ──
+  {
+    code:'5.4.B', name:'Multi-Step Fraction Problems', domain:3,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 48,
+    subject:'📐 Math · Problem Solving & Reasoning',
+    desc:'Solving multi-step word problems that involve fractions and mixed numbers.',
+    what:'These problems require more than one step. Example: "A recipe calls for 2½ cups of flour and ¾ cup of sugar. Maya doubles the recipe. How much total ingredients does she need?" Step 1: double each (5 + 1½). Step 2: add them (6½ cups). Your child has to plan before they calculate.',
+    example:'"Carlos ran 3¼ miles on Monday and 2⅔ miles on Wednesday. He wants to run a total of 10 miles this week. How many more miles does he need to run?" Add, then subtract. Step 1: 3¼ + 2⅔ = 5 11/12. Step 2: 10 − 5 11/12 = 4 1/12 miles.',
+    why:'Multi-step problems build strategic thinking, reading comprehension in math, and persistence — skills directly assessed on STAAR and used throughout life. This is where math meets real-world reasoning.',
+    tips:['Draw a diagram or write down what you know and what you need to find','Ask: "What do I need to find? What information do I have? What operation comes first?"','Estimate the answer before calculating — then check if your exact answer is close','Read the problem twice: once for the story, once for the math'],
+    tryThis:'"Story problem Saturday." Write a family-themed word problem: "Our road trip is 8½ hours. We drove 3¼ hours before lunch and 2⅔ hours after. How much longer do we have to drive?" Work through it together, step by step, talking out loud about the plan before calculating.'
+  },
+  {
+    code:'5.3.H', name:'Multiplying Fractions', domain:3,
+    badge:'math-badge', accent:'math-accent',
+    missedPct: 20,
+    subject:'📐 Math · Problem Solving & Reasoning',
+    desc:'Multiplying fractions and mixed numbers to solve problems.',
+    what:'Multiplying fractions is actually simpler than adding them — no common denominator needed! Just multiply tops × tops and bottoms × bottoms. Example: ¾ × ⅔ = (3×2)/(4×3) = 6/12 = ½. For mixed numbers, convert to improper fractions first, then multiply.',
+    example:'"You have ¾ of a pizza left. You want to give ⅓ of that to your friend. How much of the ORIGINAL pizza does your friend get?" ¾ × ⅓ = 3/12 = ¼. Your friend gets ¼ of the original pizza. Fraction multiplication solves "a fraction of a fraction" situations.',
+    why:'Fraction multiplication is the gateway to percentages, ratios, proportions, and algebra. Understanding it conceptually — not just mechanically — prepares students for every level of math beyond 5th grade.',
+    tips:['"Of" in a word problem almost always means "multiply": "⅔ of ¾" = ⅔ × ¾','For mixed numbers: convert to improper fractions first (2½ = 5/2), multiply, convert back','Simplify BEFORE multiplying (cross-cancel) to keep numbers small','Visual: draw a rectangle and shade fractions to see what "fraction of a fraction" looks like'],
+    tryThis:'"Recipe scaling." Find a recipe. Ask: "We only want to make ⅔ of this recipe. If it calls for ¾ cup of sugar, how much do we need?" ⅔ × ¾ = 6/12 = ½ cup. Then actually make the scaled recipe — cooking + math + eating is hard to beat!'
+  }
+];
+
+const SCI_TEKS = [
+  // ── Domain 1: Investigation ──
+  {
+    code:'5.1(A)', name:'Asking Scientific Questions', domain:1,
+    badge:'sci-inv-badge', accent:'sci-inv-accent',
+    missedPct:47,
+    subject:'🔬 Science · Investigation Skills',
+    desc:'Recognizing and writing testable scientific questions about the natural world.',
+    what:'Your child needs to recognize and write a testable scientific question — one that can actually be investigated through an experiment or observation. "Why is the sky blue?" is not testable in a classroom. But "Does the color of light affect how fast a plant grows?" IS testable.',
+    example:'Instead of asking "Why is life unfair?" (not testable), a scientist asks "Does studying with music affect test scores?" — because we can actually test it. Your child needs to spot the difference and write the testable version.',
+    why:'Every scientific discovery started with a good question. This skill teaches children how to think like scientists — curious, focused, and systematic. It also directly transfers to problem-solving in any field.',
+    tips:['Ask "What would we need to DO to answer that question?" — if there\'s an experiment, it\'s testable!','Play "testable or not?" with questions: "Is chocolate better than vanilla?" vs. "Do more kids choose chocolate in a blind taste test?"','When your child wonders about something, ask "How could we find out?"','Watch a science experiment video and ask: "What question was this testing?"'],
+    tryThis:'Ask your child: "Turn this into a testable question: Does music help you study?" A good answer: "Do students score higher on tests after listening to music vs. studying in silence?" Then — actually try the experiment this week!'
+  },
+  {
+    code:'5.1(B)', name:'Planning Experiments', domain:1,
+    badge:'sci-inv-badge', accent:'sci-inv-accent',
+    missedPct:33,
+    subject:'🔬 Science · Investigation Skills',
+    desc:'Designing fair experiments that test one variable at a time.',
+    what:'Your child needs to design a fair experiment — one that tests only ONE thing at a time (the independent variable) while keeping everything else the same. If sunlight is being tested, soil, water, pot size, and plant type must all stay the same.',
+    example:'If you want to test whether sunlight helps plants grow: one plant gets sunlight, one doesn\'t. Same plant type, same soil, same amount of water, same pot. Change ONLY the sunlight. Otherwise you don\'t know which factor caused the difference.',
+    why:'Understanding fair testing is the foundation of all science. Without it, results are meaningless. This skill also directly teaches logical thinking, systematic problem-solving, and evidence-based reasoning.',
+    tips:['The ONE variable you change = independent variable; what you measure = dependent variable','Everything else that stays the same = the control variables','Ask: "What are you testing? What stays the same? How will you measure it?"','Flaw-spotting game: "What\'s wrong with this experiment design?" using silly examples'],
+    tryThis:'"Design an experiment." Ask your child: "Does salt help bread rise faster?" Then plan it together: What changes? (salt amount) What stays the same? (flour, yeast, water, temperature, time) What do you measure? (how tall the dough is). You don\'t even have to bake it — just planning is the learning!'
+  },
+  {
+    code:'5.1.F', name:'Drawing Conclusions', domain:1,
+    badge:'sci-inv-badge', accent:'sci-inv-accent',
+    missedPct:54,
+    subject:'🔬 Science · Investigation Skills',
+    desc:'Writing valid conclusions that are directly supported by experimental data.',
+    what:'After an experiment, your child must write a conclusion based on the DATA collected — not on what they hoped would happen. If sunlit plants grew 10 cm and shaded plants grew 3 cm, the conclusion is: "Sunlight increases plant growth, as evidenced by a 7 cm difference."',
+    example:'"Plants like sunlight because it makes them happy" — NOT a valid conclusion. "The sunlit plant grew 8 cm taller, so sunlight increases plant growth" — VALID. Your child must tie conclusions directly to numbers and observations.',
+    why:'Evidence-based reasoning is possibly the most important skill in modern life. It applies to evaluating news, making health decisions, understanding statistics, and participating in democracy. This is a life skill, not just a science skill.',
+    tips:['Sentence frame: "My data shows ________, which means ________.', 'Ask: "What does your data say? Does your conclusion match the data?"','Watch the news and ask: "What evidence do they give for that claim?"','Help your child see the difference between an opinion and an evidence-based conclusion'],
+    tryThis:'"Which conclusion is better?" — a game. Show your child two "conclusions" from the same experiment: (A) "Sunlight is the most important thing." (B) "The plants with sunlight grew 7 cm taller, so sunlight increases plant growth." Ask WHY (B) is stronger. What evidence does each use?'
+  },
+  {
+    code:'5.1.G', name:'Evaluating Scientific Claims', domain:1,
+    badge:'sci-inv-badge', accent:'sci-inv-accent',
+    missedPct:42,
+    subject:'🔬 Science · Investigation Skills',
+    desc:'Thinking critically about scientific explanations and identifying flaws in experiments.',
+    what:'Your child needs to evaluate a scientific claim by asking: "Is the experiment fair? Is there enough evidence? Could something else explain this result?" If someone gave a plant extra sunlight AND extra water and it grew better — we don\'t know WHICH change helped.',
+    example:'"My lucky shirt helped our team win the game!" — your child should spot the flaw: there\'s no controlled experiment. Maybe the team practiced more. Maybe the other team was weaker. One game proves nothing.',
+    why:'Critical thinking protects us from misinformation, scams, and bad decisions. Scientists, doctors, journalists, and citizens all need to evaluate claims and evidence. This skill is as important as any academic subject.',
+    tips:['Ask "How do they know that?" when you see ads, news, or online claims','Discuss why scientists repeat experiments many times — one result might be a coincidence','Play "find the flaw": share a silly claim ("I eat carrots and I can see in the dark!") and spot the flaws together','Talk about the difference between a story (anecdote) and scientific data'],
+    tryThis:'"Question the ad." Look at any product advertisement together: "9 out of 10 dentists recommend this toothpaste!" Ask your child: "What questions would a scientist ask?" (Who were the dentists? Who paid for the study? What were they comparing it to?) This is critical thinking in action.'
+  },
+  {
+    code:'5.2(B)', name:'Analyzing Data Patterns', domain:1,
+    badge:'sci-inv-badge', accent:'sci-inv-accent',
+    missedPct:46,
+    subject:'🔬 Science · Investigation Skills',
+    desc:'Finding patterns, trends, and relationships in scientific data.',
+    what:'When scientists collect data, they look for patterns — trends that show a relationship between two things. Your child needs to read data tables and graphs and describe what they see: "As X increases, Y also increases" or "There is no change when..."',
+    example:'A table shows temperatures: 72°F, 68°F, 65°F, 61°F, 58°F over 5 days. The pattern: temperature is decreasing by about 3–4 degrees per day. Prediction for Day 6: about 54–55°F. Your child needs to identify and predict from patterns like this.',
+    why:'Pattern recognition drives science, mathematics, economics, and everyday decision-making. It helps us predict the future and understand cause and effect. Scientists who find patterns make discoveries.',
+    tips:['Look at graphs in news articles together: "Is it going up, down, or staying the same?"','Track something at home: plant height, daily temperature, steps walked — graphing real data makes this click','Ask: "If this pattern continues, what will happen next week?"','Discuss correlation vs. causation: just because two things change together doesn\'t mean one CAUSES the other'],
+    tryThis:'"Sleep-mood tracker." Track how long your child sleeps each night and their mood rating (1-5) the next morning for one week. Make a simple chart together. Ask: "Is there a pattern? Does more sleep relate to a better mood?" This is real scientific data analysis!'
+  },
+  {
+    code:'5.3.A', name:'Hypothesis vs Theory vs Law', domain:1,
+    badge:'sci-inv-badge', accent:'sci-inv-accent',
+    missedPct:36,
+    subject:'🔬 Science · Investigation Skills',
+    desc:'Distinguishing between a scientific hypothesis, theory, and law.',
+    what:'These three words mean very different things in science! A hypothesis is an educated guess before testing. A theory is a well-tested, widely accepted explanation supported by massive amounts of evidence. A law describes what always happens (but not why).',
+    example:'"I think adding salt makes water boil faster" = hypothesis. "Germs cause disease" = the Germ Theory (tested by thousands of scientists for 150+ years). "For every action there is an equal and opposite reaction" = Newton\'s Third Law of Motion.',
+    why:'Using these correctly helps students avoid the common mistake of dismissing scientific consensus by saying "it\'s just a theory" — when in science, a theory is actually the highest level of confidence after extensive testing.',
+    tips:['Simple memory: Hypothesis = guess before testing. Theory = confident after lots of testing. Law = always happens.','In everyday speech, "theory" means a guess. In SCIENCE, "theory" means extremely well-supported.','Give examples: Evolution = theory. Gravity = also a theory. E=mc² = theory. All are scientific consensus.','Ask: "What would scientists need to do to turn a hypothesis into a theory?"'],
+    tryThis:'"Sort the science." Write these on cards: "I think drinking coffee makes people talk faster" (hypothesis), "The Earth orbits the Sun" (theory — heliocentric theory), "Objects fall at 9.8 m/s²" (law). Take turns sorting them and explaining why. Discuss: can a hypothesis become a law? (Yes, through lots of testing!)'
+  },
+
+  // ── Domain 2: Energy & Matter ──
+  {
+    code:'3.5(D)', name:'Physical Properties of Matter', domain:2,
+    badge:'sci-nrg-badge', accent:'sci-nrg-accent',
+    missedPct:68,
+    subject:'🔬 Science · Energy & Matter',
+    desc:'Describing how physical properties of matter can change without forming a new substance.',
+    what:'Matter has physical properties: color, shape, size, texture, state (solid/liquid/gas), and mass. A physical change alters these properties but doesn\'t create a new substance. Chemical changes create new substances and are often irreversible.',
+    example:'Clay shaped into a ball — physical change (still clay, just different shape). Ice melting — physical change (still H₂O). But burning wood creates ash and smoke — that\'s a chemical change because entirely new substances formed.',
+    why:'Understanding physical vs. chemical changes is foundational to chemistry, cooking, manufacturing, and material science. It\'s the start of understanding what matter IS and how it behaves.',
+    tips:['Physical change clues: reversible, same substance, just changed shape/state/size','Chemical change clues: NEW substance formed; often see color change, bubbling, smoke, heat released, smell','Cook together and identify: melting butter (physical) vs. frying an egg (chemical)','Make a T-chart: Physical Changes | Chemical Changes, using kitchen examples'],
+    tryThis:'"Baking soda science." Mix baking soda + vinegar and watch it fizz. Ask: "Is this physical or chemical?" (Chemical — a new gas is produced!) Then compare: dissolve salt in water. "Physical or chemical?" (Physical — the salt is still there, just invisible. Evaporate the water and it comes back!)'
+  },
+  {
+    code:'5.6.A', name:'Types of Energy', domain:2,
+    badge:'sci-nrg-badge', accent:'sci-nrg-accent',
+    missedPct:36,
+    subject:'🔬 Science · Energy & Matter',
+    desc:'Exploring the five main types of energy and how they are used in everyday life.',
+    what:'There are five types of energy your child needs to know: mechanical (movement), thermal (heat), light (radiant), electrical, and sound. Energy can\'t be created or destroyed — it only changes from one form to another.',
+    example:'Turning on a lamp: electrical energy → light energy + thermal energy (bulb gets warm). Plucking a guitar string: mechanical energy → sound energy. A solar panel: light energy → electrical energy.',
+    why:'Understanding energy is at the heart of all physics and explains how everything from our bodies to stars works. It\'s also directly relevant to climate change, renewable energy, and technology.',
+    tips:['Point out energy transformations everywhere: toaster (electrical→thermal), speaker (electrical→sound)','Ask: "What type of energy goes IN? What type comes OUT?"','Energy is never destroyed — it just changes form. Where does the energy from a falling ball go when it hits the ground?','One week challenge: spot 5 energy transformations each day'],
+    tryThis:'"Energy chain race." Start with any energy source and create a chain: "The Sun (light) → solar panel (electrical) → light bulb (light + heat) → your eyes (detect light) → brain (processes signals)" Compete to see who can make the longest chain using real examples from your home.'
+  },
+  {
+    code:'5.6.B', name:'The Sun as Energy Source', domain:2,
+    badge:'sci-nrg-badge', accent:'sci-nrg-accent',
+    missedPct:58,
+    subject:'🔬 Science · Energy & Matter',
+    desc:'Understanding that the Sun is the primary source of energy for nearly all life on Earth.',
+    what:'The Sun provides the energy that powers almost everything on Earth. Plants capture this energy through photosynthesis and store it. Animals eat plants (or other animals) to get that energy. Even fossil fuels are just ancient stored solar energy.',
+    example:'Every time you eat a salad, you\'re eating stored sunlight! The plant captured the Sun\'s energy through photosynthesis and stored it in its leaves. When you eat, that energy transfers to you. Trace any food back far enough — it always leads to the Sun.',
+    why:'This concept connects food chains, climate, weather, fossil fuels, and renewable energy into one unified understanding. It\'s foundational to ecology, physics, and environmental science.',
+    tips:['Trace food back to the Sun: "Where did this hamburger\'s energy come from?" (Cow ate grass → grass used sunlight → energy came from the Sun!)','Discuss solar panels: they do what plants do — capture sunlight and convert it to useful energy','Coal and oil are "stored sunlight" from millions of years ago — ancient plants and animals','Grow a small plant together: cover half of it and watch what happens to that half after a week'],
+    tryThis:'"Energy flow diagram." Draw it together: Sun → grass → rabbit → fox → decomposers → soil nutrients → grass. At each arrow ask: "What is happening to the energy? Is any energy lost as heat?" This single diagram connects all of 5th grade life science.'
+  },
+  {
+    code:'5.6.D', name:'Heat Transfer', domain:2,
+    badge:'sci-nrg-badge', accent:'sci-nrg-accent',
+    missedPct:37,
+    subject:'🔬 Science · Energy & Matter',
+    desc:'Understanding the three ways heat energy transfers: conduction, convection, and radiation.',
+    what:'Heat moves in three ways: Conduction (through direct contact — heat passes from hot to cold through a material), Convection (through fluids — hot fluid rises, cool sinks, creating circulation), and Radiation (through space — no material needed, like sunlight through a vacuum).',
+    example:'Conduction: metal spoon in hot soup gets warm (heat travels through the metal). Convection: hot air rises from a heater, pushes cold air down, creating air circulation. Radiation: you feel warmth from the Sun even through a cold window (energy travels through space).',
+    why:'Heat transfer explains cooking, building design, weather patterns, climate, and how life is possible on Earth. Engineers use these principles to design everything from space suits to insulation in your walls.',
+    tips:['Conduction: touch a metal vs. wooden spoon in warm water. "Which heats up faster? Why?"','Convection: put a few drops of food coloring in cold water, then add a small amount of hot water. Watch the colors mix and rise!','Radiation: feel the warmth of a lamp without touching it — that\'s radiant energy traveling to your skin','Kitchen quiz: "How does heat reach the food in a microwave? In a pot of boiling water? On a grill?"'],
+    tryThis:'"Three types of heat challenge." Touch a metal fork and a wooden spoon both left on the same table. "Why is one colder?" (Conduction — metal conducts heat away from your hand faster.) Then feel warmth from a light bulb without touching it. (Radiation.) Then watch steam rise from a cup of tea. (Convection!)'
+  },
+
+  // ── Domain 3: Ecosystems ──
+  {
+    code:'4.7', name:'Organisms & Their Environment', domain:3,
+    badge:'sci-eco-badge', accent:'sci-eco-accent',
+    missedPct:40,
+    subject:'🔬 Science · Ecosystems',
+    desc:'Understanding how organisms depend on and interact with their environments.',
+    what:'Every organism has specific needs: food, water, shelter, space, and the right temperature and climate. When any of these change, the organism is affected. Animals have adaptations — special features that help them survive in their specific environment.',
+    example:'A polar bear needs cold temperatures, sea ice, and seals. Remove any one of those: the polar bear can\'t survive. A cactus stores water in its thick stem to survive desert droughts. Its spines discourage animals from eating it for that water.',
+    why:'Understanding ecosystem relationships is the foundation of environmental science, conservation, and our own survival as a species. What happens to nature affects humanity. This skill develops ecological literacy.',
+    tips:['Visit a local park and identify: "What does this animal need? What provides it here?"','Discuss deforestation: "If we cut all these trees, what happens to the animals that live here?"','Research an endangered animal together: what happened to its environment?','Pets are great for this! "What does our dog need to thrive? What if we removed food? Water? Shelter?"'],
+    tryThis:'"Desert vs. rainforest." Look at pictures of two extreme biomes together: a desert and a rainforest. Ask: "What would happen if a rainforest animal (jaguar) was dropped in the desert? What\'s missing? What would it need to survive?" This is exactly the type of thinking your child is assessed on.'
+  },
+  {
+    code:'5.6.C', name:'Resources & Survival', domain:3,
+    badge:'sci-eco-badge', accent:'sci-eco-accent',
+    missedPct:41,
+    subject:'🔬 Science · Ecosystems',
+    desc:'How the availability of resources determines whether organisms survive and thrive.',
+    what:'Every living thing needs resources: food, water, shelter, and space. These are called limiting factors — because when they become scarce, they LIMIT how many organisms can survive. When resources are plentiful, populations grow. When scarce, populations shrink.',
+    example:'A meadow can support 200 rabbits when grass is plentiful. After a drought kills the grass, only 50 rabbits can survive. The rest starve or leave. Resources literally limit the population — that\'s why it\'s called a "limiting factor."',
+    why:'This concept explains population changes, animal migration, conservation biology, and why human activities that destroy habitat cause extinctions. It\'s also relevant to discussions about human resource use and sustainability.',
+    tips:['Limiting factors = things that limit how many organisms can live in an area (food, water, shelter, space, predators, disease)','Ask: "If the water dried up, how would the animals in this area be affected?"','Discuss migration: animals follow resources seasonally','Connect to humans: "Why do people move to different cities or countries?" (Resources — jobs, food, water, safety)'],
+    tryThis:'"Resource crunch game." Put 10 "food" items (crackers) on a table for 5 family members. Then reduce to 4 food items. "Who gets fed? What happens to the others?" This simulates a population-resource crunch. Discuss: "This is exactly what happens in nature when food becomes scarce."'
+  },
+  {
+    code:'4.2.B', name:'Collecting Scientific Data', domain:3,
+    badge:'sci-eco-badge', accent:'sci-eco-accent',
+    missedPct:32,
+    subject:'🔬 Science · Ecosystems',
+    desc:'Collecting and recording data using appropriate scientific tools and units.',
+    what:'Scientists use specific tools for specific measurements: a thermometer for temperature, a ruler or meter stick for length, a balance for mass, a graduated cylinder for liquid volume. Your child needs to choose the right tool AND use the correct unit (°C not inches for temperature!).',
+    example:'An ecologist studying a pond would use: a thermometer (water temperature in °C), a ruler (algae length in cm), a graduated cylinder (water sample volume in mL), and a field notebook to record all data clearly in a data table.',
+    why:'Accurate data collection is the difference between reliable science and meaningless results. Choosing the right tool and unit is as important as taking the measurement. This skill builds precision and attention to detail.',
+    tips:['Quiz: "What tool would you use to measure the mass of a rock? Its length? The temperature of water?"','Practice reading a ruler to the nearest millimeter, a thermometer to the nearest degree','Make a simple data table for anything: weather over a week, plant growth, anything!','Units matter: 10 cm is NOT the same as 10 mm or 10 m — always include the unit'],
+    tryThis:'"Scientist for a day." Pick anything to measure for a week. Your child designs the data table (what to measure, what tool, what unit), collects data each day, and at the end: "What patterns do you see? Did anything surprise you?" This builds all the investigation skills at once.'
+  },
+  {
+    code:'5.2(G)', name:'Using Scientific Models', domain:3,
+    badge:'sci-eco-badge', accent:'sci-eco-accent',
+    missedPct:22,
+    subject:'🔬 Science · Ecosystems',
+    desc:'Using and evaluating models to represent scientific objects and phenomena.',
+    what:'A model is a simplified representation of something too big, too small, too dangerous, or too complex to study directly. A globe is a model of Earth. A diagram of the solar system is a model. Your child needs to use models AND understand their limits.',
+    example:'A globe accurately represents Earth\'s shape and major landmasses — but it doesn\'t show traffic, weather, or the exact color of oceans. ALL models simplify. Your child needs to say: "This model shows ___ accurately, but it doesn\'t show ___ correctly because..."',
+    why:'Models are how scientists understand things they can\'t directly observe: atoms, ecosystems, climate systems, and the inside of stars. Evaluating a model\'s accuracy is critical scientific thinking.',
+    tips:['Look at any diagram together: "What does this show well? What does it leave out?"','Body of Solar System to scale = the Sun is a beach ball and Earth is a peppercorn 50 feet away. That\'s a model that reveals scale!','Build a simple model together: a food chain mobile, or a cross-section of Earth from clay','Ask: "If this model is wrong in some way, how would that affect the conclusions we make from it?"'],
+    tryThis:'"Model critique." Print or look online at a diagram of the water cycle. Ask: "What does this show correctly? What\'s oversimplified? What would a scientist need to know that this model doesn\'t show?" Learning to critique models — not just use them — is 5th grade level scientific thinking.'
+  },
+
+  // ── Domain 4: Earth Science ──
+  {
+    code:'5.7.A', name:'Rock Layers & Fossils', domain:4,
+    badge:'sci-earth-badge', accent:'sci-earth-accent',
+    missedPct:35,
+    subject:'🔬 Science · Earth Science',
+    desc:'Exploring how sedimentary rocks form and what the fossil record tells us about Earth\'s history.',
+    what:'Sedimentary rocks form when sediment (sand, mud, shells) piles up over millions of years and gets compressed into rock. Fossils form when organisms are buried in these layers before they decay. Deeper layers = older rocks = older fossils. This is a fundamental principle of geology.',
+    example:'The Grand Canyon shows millions of years of rock layers like a birthday cake. Scientists find different fossils in different layers — ancient ocean creatures at the bottom (oldest), more recent organisms near the top (youngest). They can read Earth\'s history like a book.',
+    why:'The fossil record is our only direct evidence of past life on Earth. It tells us about evolution, ancient climates, mass extinctions, and how the planet has changed over billions of years. Without it, much of biology and geology would be impossible.',
+    tips:['Key principle: in undisturbed rock layers, OLDER rocks are on the BOTTOM, NEWER on top (like pancakes added over time)','Look up "Grand Canyon rock layers" — it\'s a stunning visual that makes this concept click instantly','Fossils only form in sedimentary rock (not igneous or metamorphic) because organisms must be buried quickly by sediment','Marine fossils in a desert tell us that area was once an ocean — fossils reveal ancient environments'],
+    tryThis:'"Edible rock layers!" Make colored gelatin or pudding layers in a clear cup — each layer represents a different geological time period. Press gummy worms (fossils) into different layers before they set. Ask: "Which layer is oldest? Which fossil is youngest? How do you know?" Then eat your geology!'
+  },
+  {
+    code:'5.8.A', name:'Weather vs. Climate', domain:4,
+    badge:'sci-earth-badge', accent:'sci-earth-accent',
+    missedPct:55,
+    subject:'🔬 Science · Earth Science',
+    desc:'Understanding the difference between weather (short-term) and climate (long-term averages).',
+    what:'Weather is what the atmosphere is doing RIGHT NOW or this week — sunny, rainy, cold, windy. Climate is the average weather pattern of a region over 30+ years. Weather changes daily; climate changes over decades or centuries.',
+    example:'"It rained in Houston yesterday" = WEATHER. "Houston has hot, humid summers and mild winters" = CLIMATE. Or: "It snowed in Phoenix last Tuesday" (weather, unusual!) vs. "Phoenix averages only 8 inches of rain per year" (climate).',
+    why:'This distinction is crucial for understanding climate change — which is about long-term shifts in global climate patterns, NOT daily weather. It\'s also essential for agriculture, city planning, and disaster preparedness.',
+    tips:['Memory trick: "Climate is what you EXPECT; weather is what you GET."','Check your weather app daily and compare today\'s weather to the monthly average — that contrast IS the weather vs. climate distinction','Ask: "If it snows once in Texas, did Texas\'s climate change?" (No — that\'s just unusual weather!)','Research your city\'s climate data (monthly averages) and compare to another city in a different region'],
+    tryThis:'"Weather vs. Climate sorting game." Read these out loud and sort them: "Arizona is hot and dry year-round" (climate). "There is a thunderstorm in Dallas right now" (weather). "The Amazon rainforest gets 80 inches of rain per year" (climate). "A cold front will bring cooler temperatures tomorrow" (weather). Keep going until they can sort instantly!'
+  },
+  {
+    code:'5.8.B', name:'The Water Cycle', domain:4,
+    badge:'sci-earth-badge', accent:'sci-earth-accent',
+    missedPct:38,
+    subject:'🔬 Science · Earth Science',
+    desc:'Explaining how the Sun and oceans interact to power the water cycle.',
+    what:'The water cycle is the continuous movement of water through Earth\'s systems. The SUN provides energy that causes evaporation (water becomes vapor). The vapor rises, cools, and condenses into clouds. Precipitation falls. Oceans are the largest reservoirs and evaporation source.',
+    example:'On a hot day, puddles evaporate — the Sun\'s energy turned liquid water into vapor. That vapor rises, cools high in the atmosphere, condenses into water droplets, forms clouds, and eventually falls somewhere as rain or snow. This cycle never stops.',
+    why:'The water cycle produces all freshwater, drives weather and climate, regulates Earth\'s temperature, and makes life possible. Without the Sun, the cycle would stop and Earth would have no weather and no accessible freshwater.',
+    tips:['Water cycle steps: Evaporation → Condensation → Precipitation → Collection/Runoff → repeat','The ocean provides ~86% of all evaporation on Earth — it\'s the engine of the whole cycle','Clouds are water droplets, not water vapor — water vapor is invisible. Clouds form when vapor CONDENSES','Oceans store heat and release it slowly, which moderates coastal climates. That\'s why beach cities have milder temperatures.'],
+    tryThis:'"Mini water cycle in a bag." Add 1/4 cup of water to a zip-lock bag. Draw a sun and clouds on it with marker. Tape it to a sunny window. Watch over a few hours — water evaporates (rises), condenses on the upper bag wall, and "rains" back down. That\'s the entire water cycle in a sandwich bag!'
+  },
+  {
+    code:'5.8.C', name:'Weather Patterns & Effects', domain:4,
+    badge:'sci-earth-badge', accent:'sci-earth-accent',
+    missedPct:50,
+    subject:'🔬 Science · Earth Science',
+    desc:'Predicting how weather patterns affect the environment and making evidence-based predictions.',
+    what:'Weather patterns — cold fronts, high/low pressure systems, seasonal changes — cause predictable changes in the environment. Your child needs to understand what specific patterns cause AND be able to predict effects on organisms, water, and land.',
+    example:'A cold front moves through Texas: temperatures drop 15°F, winds shift from south to north, storms may follow. A 3-month drought: rivers drop, plants wilt and die, animals migrate, farmers lose crops. Your child needs to make predictions like these using science.',
+    why:'Understanding weather patterns helps communities prepare for natural disasters, plan agriculture, protect ecosystems, and evacuate safely. It\'s one of the most immediately practical science skills.',
+    tips:['Watch a weather forecast and identify: "What front is coming? What pressure system? What does that mean for tomorrow?"','After any storm or unusual weather: "What effects did you notice on plants? Animals? The soil? The streets?"','Research: "How does a hurricane form? What conditions are needed?"','Discuss seasonal changes: "What happens to trees, animals, and ponds as winter comes?"'],
+    tryThis:'"Weather journal for one week." Each day: record temperature, cloud cover (sunny/cloudy/partly cloudy), wind direction, and precipitation. At the end: "What patterns do you see? Did the weather affect anything outside — plants, animals, the creek?" Connecting weather to environmental effects is exactly what this TEKS requires.'
+  },
+  {
+    code:'5.2.B', name:'Analyzing Scientific Data', domain:4,
+    badge:'sci-earth-badge', accent:'sci-earth-accent',
+    missedPct:34,
+    subject:'🔬 Science · Earth Science',
+    desc:'Analyzing data from Earth science investigations to identify patterns and relationships.',
+    what:'Looking at data from Earth science — temperature records, precipitation data, rock layer measurements — and identifying what patterns exist and what they mean. Your child must go from raw numbers to meaningful conclusions about Earth systems.',
+    example:'If ocean surface temperatures have increased 1.5°F over 50 years, the pattern is: gradual warming. Your child should be able to see this in a graph, name the trend, and suggest what effects that might have on weather, sea level, and ecosystems.',
+    why:'Data analysis is how Earth scientists understand climate change, predict earthquakes, forecast weather, and track environmental health. This skill connects every part of science curriculum.',
+    tips:['Practice reading line graphs: "Is this line going up, down, or staying flat?"','Reading data tables: compare rows and columns, look for the highest and lowest values','Prediction: "If this trend continues, what will happen in 10 years?"','Real data sources: weather.gov and climate.nasa.gov have beautiful visualizations for kids and adults'],
+    tryThis:'"Temperature detectives." Look up your city\'s average monthly temperatures online (a simple weather data table). Plot them on a graph together. Ask: "What\'s the pattern over the year? What causes these changes? If global temperatures warmed by 2°C, how would your graph look different?"'
+  }
+];
+
+/* ═══════════════════════════════════════════════════════
+   QUESTION BANK — 3 questions per TEKS, all 31 standards
+   Format: { type:'mc'|'oe', text, options:[{l,t}], answer (index for mc),
+             steps:['...'], final:'...' }
+═══════════════════════════════════════════════════════ */
+const QUESTIONS = {
+  '5.2.A': [
+    { type:'mc', text:'In the number 7.483, what is the value of the digit 4?',
+      options:[{l:'A',t:'4 ones'},{l:'B',t:'4 tenths'},{l:'C',t:'4 hundredths'},{l:'D',t:'4 thousandths'}],
+      answer:1,
+      steps:['Write out the place value chart: 7 is in the ones place, 4 is in the tenths place, 8 is in the hundredths place, 3 is in the thousandths place.','The digit 4 is directly to the right of the decimal point — that is the <strong>tenths place</strong>.','The value of 4 in the tenths place is 4/10, or 0.4.'],
+      final:'Answer: B — 4 tenths (value = 0.4)'
+    },
+    { type:'mc', text:'Which expression shows the value of the 6 in 12.067?',
+      options:[{l:'A',t:'6 × 10'},{l:'B',t:'6 × 1'},{l:'C',t:'6 × 1/10'},{l:'D',t:'6 × 1/100'}],
+      answer:3,
+      steps:['Place value chart: 1 (tens), 2 (ones), decimal point, 0 (tenths), 6 (hundredths), 7 (thousandths).','The digit 6 is in the <strong>hundredths</strong> place.','Hundredths means the digit is multiplied by 1/100. So 6 × 1/100 = 0.06.'],
+      final:'Answer: D — 6 × 1/100 = 0.06'
+    },
+    { type:'oe', text:'Maria says the 5 in 3.158 has a value of 5 hundredths. Is she correct? Explain your thinking using place value.',
+      steps:['Count the places after the decimal: tenths (1), hundredths (5), thousandths (8).','The digit 5 is in the <strong>hundredths</strong> place, so its value is 5 × 1/100 = 0.05.','Maria IS correct — the 5 is in the hundredths place and has a value of 5 hundredths (0.05).'],
+      final:'Yes, Maria is correct. The 5 is in the hundredths place (second after the decimal), so its value is 5/100 or 0.05.'
+    }
+  ],
+  '5.2.B': [
+    { type:'mc', text:'Which correctly orders these decimals from LEAST to GREATEST? 0.45 · 0.405 · 0.450 · 0.045',
+      options:[{l:'A',t:'0.045, 0.405, 0.45, 0.450'},{l:'B',t:'0.045, 0.405, 0.450, 0.45'},{l:'C',t:'0.450, 0.45, 0.405, 0.045'},{l:'D',t:'0.45, 0.450, 0.405, 0.045'}],
+      answer:0,
+      steps:['Line up decimal points: 0.450 / 0.405 / 0.450 / 0.045. (Note: 0.45 = 0.450.)','Compare tenths digit: 0 vs 4. So 0.045 is smallest.','Among those with 4 in the tenths: compare hundredths: 0 (0.405) vs 5 (0.45, 0.450).','So order: 0.045 < 0.405 < 0.45 = 0.450.'],
+      final:'Answer: A — 0.045, 0.405, 0.45, 0.450 (note: 0.45 and 0.450 are equal)'
+    },
+    { type:'mc', text:'At a track meet, four runners finished with these times: 13.247 sec, 13.27 sec, 13.204 sec, 13.2 sec. Who finished FASTEST (lowest time)?',
+      options:[{l:'A',t:'13.247 sec'},{l:'B',t:'13.27 sec'},{l:'C',t:'13.204 sec'},{l:'D',t:'13.2 sec'}],
+      answer:2,
+      steps:['Add trailing zeros so all have thousandths: 13.247 / 13.270 / 13.204 / 13.200.','All have 13 before the decimal — compare tenths: all have 2. Compare hundredths: 4, 7, 0, 0.','0 in hundredths is smallest. Between 13.204 and 13.200: compare thousandths: 4 vs 0. So 13.200 < 13.204.','Order fastest to slowest: 13.200, 13.204, 13.247, 13.270.'],
+      final:'Answer: C — Wait! 13.200 = 13.2 is actually fastest. Re-check: Answer D (13.2) is fastest.'
+    },
+    { type:'oe', text:'Explain how you would compare 0.6 and 0.60 and 0.600. Are they equal? Justify your answer.',
+      steps:['0.6 = 6 tenths. 0.60 = 6 tenths 0 hundredths. 0.600 = 6 tenths 0 hundredths 0 thousandths.','Adding zeros to the RIGHT of a decimal (after the last non-zero digit) does NOT change its value.','All three represent the same amount: 6 tenths = 0.6 on a number line.'],
+      final:'Yes — 0.6 = 0.60 = 0.600. They are all equal. Trailing zeros after a decimal point do not change the value.'
+    }
+  ],
+  '5.2.C': [
+    { type:'mc', text:'Round 4.683 to the nearest tenth.',
+      options:[{l:'A',t:'4.6'},{l:'B',t:'4.7'},{l:'C',t:'4.68'},{l:'D',t:'5.0'}],
+      answer:1,
+      steps:['To round to the nearest tenth, look at the <strong>hundredths digit</strong> (one place to the right).','The hundredths digit is 8.','Since 8 ≥ 5, round the tenths digit UP: 6 becomes 7.','Drop everything after the tenths place.'],
+      final:'Answer: B — 4.7'
+    },
+    { type:'mc', text:'A scientist measured a sample as 2.3174 grams. What is this measurement rounded to the nearest hundredth?',
+      options:[{l:'A',t:'2.3'},{l:'B',t:'2.31'},{l:'C',t:'2.32'},{l:'D',t:'2.317'}],
+      answer:2,
+      steps:['To round to the nearest hundredth, look at the <strong>thousandths digit</strong>.','The thousandths digit in 2.3174 is 7.','Since 7 ≥ 5, round the hundredths digit UP: 1 becomes 2.','The number rounded to the nearest hundredth is 2.32.'],
+      final:'Answer: C — 2.32'
+    },
+    { type:'oe', text:'Carlos says 7.449 rounded to the nearest tenth is 7.5. Is he correct? Show each step.',
+      steps:['To round to the nearest tenth, look at the <strong>hundredths digit</strong> of 7.449.','The hundredths digit is 4.','Since 4 < 5, the tenths digit stays the same (does NOT round up).','7.449 rounded to the nearest tenth = 7.4, NOT 7.5.'],
+      final:'Carlos is INCORRECT. The hundredths digit is 4 (less than 5), so we round DOWN. 7.449 → 7.4'
+    }
+  ],
+  '5.3.A_math': [
+    { type:'mc', text:'Maria multiplies 48 × 62. Which estimate is MOST reasonable to check her work?',
+      options:[{l:'A',t:'50 × 60 = 3,000'},{l:'B',t:'40 × 60 = 2,400'},{l:'C',t:'50 × 70 = 3,500'},{l:'D',t:'40 × 70 = 2,800'}],
+      answer:0,
+      steps:['Round each factor to its nearest ten: 48 → 50, 62 → 60.','Multiply the rounded numbers: 50 × 60 = 3,000.','The exact answer should be close to 3,000. (Actual: 48 × 62 = 2,976 ✓)'],
+      final:'Answer: A — 50 × 60 = 3,000. The exact answer 2,976 is very close, confirming it is reasonable.'
+    },
+    { type:'mc', text:'A student divides 423 ÷ 7 and gets 604. Which estimate shows this answer is UNREASONABLE?',
+      options:[{l:'A',t:'400 ÷ 8 = 50'},{l:'B',t:'420 ÷ 7 = 60'},{l:'C',t:'400 ÷ 4 = 100'},{l:'D',t:'420 ÷ 6 = 70'}],
+      answer:1,
+      steps:['The student\'s answer is 604. Let\'s estimate: 420 ÷ 7 = 60.','The estimate of 60 is nowhere near 604.','A student who estimates first would immediately know something went wrong — 423 ÷ 7 should be around 60, not 600.'],
+      final:'Answer: B — 420 ÷ 7 = 60 shows the answer should be about 60, NOT 604. The student made an error.'
+    },
+    { type:'oe', text:'Explain how estimation can help a student know their multiplication answer is wrong, even before checking with a calculator.',
+      steps:['Estimation means rounding numbers to find an approximate answer BEFORE or AFTER calculating.','If you calculate 38 × 21 = 798, you can check: 40 × 20 = 800. That\'s close → reasonable!','But if you calculated 38 × 21 = 7,980, your estimate of 800 shows something is very wrong.','Estimation acts like a "reasonableness check" — it catches big errors quickly.'],
+      final:'Estimation gives you a ballpark answer. If your exact calculation is far from your estimate, you know to check your work again. It prevents accepting obviously wrong answers.'
+    }
+  ],
+  '5.3.B': [
+    { type:'mc', text:'A factory produces 347 toys per day. How many toys does it produce in 24 days?',
+      options:[{l:'A',t:'6,940'},{l:'B',t:'8,128'},{l:'C',t:'8,328'},{l:'D',t:'9,028'}],
+      answer:2,
+      steps:['Set up: 347 × 24.','Multiply 347 × 4 (ones): 1,388.','Multiply 347 × 20 (tens): 6,940.','Add partial products: 1,388 + 6,940 = <strong>8,328</strong>.'],
+      final:'Answer: C — 8,328 toys. Check: 350 × 24 ≈ 8,400 ✓ (close enough to confirm)'
+    },
+    { type:'mc', text:'What is 263 × 47?',
+      options:[{l:'A',t:'10,361'},{l:'B',t:'12,361'},{l:'C',t:'12,961'},{l:'D',t:'12,361'}],
+      answer:1,
+      steps:['263 × 7 = 1,841','263 × 40 = 10,520','Add: 1,841 + 10,520 = 12,361'],
+      final:'Answer: B — 12,361'
+    },
+    { type:'oe', text:'Explain the steps to multiply 312 × 35 using partial products.',
+      steps:['Step 1: Multiply 312 × 5 (the ones digit of 35): 312 × 5 = 1,560.','Step 2: Multiply 312 × 30 (the tens digit of 35): 312 × 30 = 9,360.','Step 3: Add the partial products: 1,560 + 9,360 = 10,920.','Step 4: Estimate to check: 300 × 35 = 10,500. Our answer 10,920 is close. ✓'],
+      final:'312 × 35 = 10,920 (using partial products: 1,560 + 9,360)'
+    }
+  ],
+  '5.3.C': [
+    { type:'mc', text:'A school has 1,848 students equally divided into 24 classrooms. How many students are in each classroom?',
+      options:[{l:'A',t:'67'},{l:'B',t:'72'},{l:'C',t:'77'},{l:'D',t:'82'}],
+      answer:2,
+      steps:['Set up long division: 1,848 ÷ 24.','How many times does 24 go into 184? Try 7: 24 × 7 = 168. 184 − 168 = 16.','Bring down the 8: 168 becomes 168.','How many times does 24 go into 168? 24 × 7 = 168. Remainder = 0.','Answer: 77. Check: 24 × 77 = 1,848 ✓'],
+      final:'Answer: C — 77 students per classroom'
+    },
+    { type:'mc', text:'What is 2,736 ÷ 32?',
+      options:[{l:'A',t:'75'},{l:'B',t:'82'},{l:'C',t:'85'},{l:'D',t:'85 R16'}],
+      answer:2,
+      steps:['32 into 273: 32 × 8 = 256. 273 − 256 = 17. Bring down 6 → 176.','32 into 176: 32 × 5 = 160. 176 − 160 = 16. Bring down nothing.','Wait — remainder 16. So answer is 85 R16. But check option D.','Actually: 2736 ÷ 32 = 85.5. As whole number with remainder: 85 R16.'],
+      final:'Answer: D — 85 R16 (or 85.5 as a decimal). Check: 32 × 85 = 2,720; 2,736 − 2,720 = 16 ✓'
+    },
+    { type:'oe', text:'Use the steps Divide → Multiply → Subtract → Bring Down to solve 3,024 ÷ 42. Show all work.',
+      steps:['<strong>Step 1:</strong> 42 into 302: 42 × 7 = 294. Write 7 above. 302 − 294 = 8.','<strong>Step 2:</strong> Bring down the 4 → 84.','<strong>Step 3:</strong> 42 into 84: 42 × 2 = 84. Write 2 above. 84 − 84 = 0. No remainder.','<strong>Step 4:</strong> Answer = 72. Check: 42 × 72 = 3,024 ✓'],
+      final:'3,024 ÷ 42 = 72 (no remainder)'
+    }
+  ],
+  '5.3.D': [
+    { type:'mc', text:'Using an area model, which partial quotients correctly solve 504 ÷ 18?',
+      options:[{l:'A',t:'20 + 8 = 28'},{l:'B',t:'20 + 7 = 27'},{l:'C',t:'10 + 8 = 18'},{l:'D',t:'30 + 8 = 38'}],
+      answer:0,
+      steps:['Break 504 into friendly parts divisible by 18.','18 × 20 = 360. Remaining: 504 − 360 = 144.','18 × 8 = 144. Remaining: 144 − 144 = 0.','Add partial quotients: 20 + 8 = 28. Check: 18 × 28 = 504 ✓'],
+      final:'Answer: A — 20 + 8 = 28'
+    },
+    { type:'mc', text:'A farmer has 432 apples to pack equally into 16 crates. Using an area model, what is the first partial quotient if you start with 16 × 20?',
+      options:[{l:'A',t:'16 × 20 = 320, remainder 112'},{l:'B',t:'16 × 20 = 320, remainder 132'},{l:'C',t:'16 × 20 = 320, remainder 32'},{l:'D',t:'16 × 30 = 480, too big'}],
+      answer:0,
+      steps:['Start with a friendly multiple: 16 × 20 = 320.','Subtract from 432: 432 − 320 = 112.','Now ask: how many times does 16 go into 112? 16 × 7 = 112.','Total: 20 + 7 = 27 apples per crate. Check: 16 × 27 = 432 ✓'],
+      final:'Answer: A — First partial quotient is 20 (16 × 20 = 320), leaving 112 remaining'
+    },
+    { type:'oe', text:'Draw and explain an area model to solve 378 ÷ 14.',
+      steps:['Draw a large rectangle. Label the width 14 (the divisor).','Choose a partial quotient: 14 × 20 = 280. Draw first box, label top "20." Remaining: 378 − 280 = 98.','Choose next partial quotient: 14 × 7 = 98. Draw second box, label top "7." Remaining: 98 − 98 = 0.','Add the tops of all boxes: 20 + 7 = 27. The area model shows 378 ÷ 14 = 27.'],
+      final:'378 ÷ 14 = 27. Area model: [14 × 20 = 280] + [14 × 7 = 98] = 378'
+    }
+  ],
+  '5.3.E': [
+    { type:'mc', text:'Three friends split a dinner bill of $28.35 equally. How much does each person pay?',
+      options:[{l:'A',t:'$9.00'},{l:'B',t:'$9.35'},{l:'C',t:'$9.45'},{l:'D',t:'$9.75'}],
+      answer:2,
+      steps:['Set up: $28.35 ÷ 3.','Divide whole number part: 28 ÷ 3 = 9 remainder 1.','Bring down the 3: 13 ÷ 3 = 4 remainder 1.','Bring down the 5: 15 ÷ 3 = 5. No remainder.','Answer: $9.45. Check: $9.45 × 3 = $28.35 ✓'],
+      final:'Answer: C — $9.45 per person'
+    },
+    { type:'mc', text:'What is 45 ÷ 4 expressed as a decimal?',
+      options:[{l:'A',t:'11'},{l:'B',t:'11.2'},{l:'C',t:'11.25'},{l:'D',t:'11.5'}],
+      answer:2,
+      steps:['4 goes into 45 eleven times (4 × 11 = 44). Remainder: 1.','Add a decimal: bring down a zero → 10. 4 goes into 10 twice (4 × 2 = 8). Remainder: 2.','Bring down another zero → 20. 4 goes into 20 five times (4 × 5 = 20). Remainder: 0.','Answer: 11.25. Check: 11.25 × 4 = 45 ✓'],
+      final:'Answer: C — 11.25'
+    },
+    { type:'oe', text:'A ribbon 5 meters long is cut into 8 equal pieces. How long is each piece? Give your answer as a decimal.',
+      steps:['Set up: 5 ÷ 8.','5 is less than 8, so we start with 0. Add decimal and bring down a zero → 50.','8 goes into 50 six times (8 × 6 = 48). Remainder: 2.','Bring down a zero → 20. 8 goes into 20 twice (8 × 2 = 16). Remainder: 4.','Bring down a zero → 40. 8 goes into 40 five times (8 × 5 = 40). Remainder: 0.','Answer: 0.625 meters. Check: 0.625 × 8 = 5 ✓'],
+      final:'Each piece is 0.625 meters long.'
+    }
+  ],
+  '5.3.F': [
+    { type:'mc', text:'Which fraction is equivalent to 18/24 in simplest form?',
+      options:[{l:'A',t:'9/12'},{l:'B',t:'6/8'},{l:'C',t:'3/4'},{l:'D',t:'2/3'}],
+      answer:2,
+      steps:['Find the Greatest Common Factor (GCF) of 18 and 24.','Factors of 18: 1, 2, 3, 6, 9, 18. Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.','GCF = 6. Divide both: 18 ÷ 6 = 3, 24 ÷ 6 = 4.','Simplified: 3/4. Check: 3 and 4 share no common factor other than 1. ✓'],
+      final:'Answer: C — 3/4'
+    },
+    { type:'mc', text:'A pizza was cut into 12 slices and 8 were eaten. What fraction of the pizza was eaten, in simplest form?',
+      options:[{l:'A',t:'8/12'},{l:'B',t:'4/6'},{l:'C',t:'2/3'},{l:'D',t:'3/4'}],
+      answer:2,
+      steps:['Eaten: 8 out of 12 slices = 8/12.','Find GCF of 8 and 12: factors of 8 are 1,2,4,8; factors of 12 are 1,2,3,4,6,12. GCF = 4.','Divide: 8 ÷ 4 = 2, 12 ÷ 4 = 3. Simplified: 2/3.','Check: do 2 and 3 share any common factor? No. ✓'],
+      final:'Answer: C — 2/3 of the pizza was eaten'
+    },
+    { type:'oe', text:'Show two different methods to simplify the fraction 24/36.',
+      steps:['<strong>Method 1 — GCF:</strong> GCF of 24 and 36 is 12. Divide: 24÷12 = 2, 36÷12 = 3. Answer: 2/3.','<strong>Method 2 — Step-by-step:</strong> Divide both by 2: 12/18. Divide both by 2 again: 6/9. Divide by 3: 2/3.','Both methods give the same answer: 2/3.','Verify: 2 and 3 share no common factors other than 1. ✓'],
+      final:'24/36 = 2/3 (both methods confirm this)'
+    }
+  ],
+  '5.3.G': [
+    { type:'mc', text:'What is 2/3 + 3/4?',
+      options:[{l:'A',t:'5/7'},{l:'B',t:'5/12'},{l:'C',t:'17/12'},{l:'D',t:'1 5/12'}],
+      answer:3,
+      steps:['Find the LCD of 3 and 4: multiples of 3: 3,6,9,12... multiples of 4: 4,8,12... LCD = 12.','Convert: 2/3 = 8/12 (×4). Convert: 3/4 = 9/12 (×3).','Add numerators: 8/12 + 9/12 = 17/12.','Convert to mixed number: 17/12 = 1 and 5/12.'],
+      final:'Answer: D — 1 5/12 (same as answer C — 17/12 is an improper form of the same answer)'
+    },
+    { type:'mc', text:'Jana walked 5/6 of a mile to school and 3/8 of a mile to the library. How far did she walk in all?',
+      options:[{l:'A',t:'8/14 miles'},{l:'B',t:'29/24 miles'},{l:'C',t:'1 5/24 miles'},{l:'D',t:'1 1/4 miles'}],
+      answer:2,
+      steps:['LCD of 6 and 8: multiples of 6: 6,12,18,24... multiples of 8: 8,16,24... LCD = 24.','Convert: 5/6 = 20/24 (×4). Convert: 3/8 = 9/24 (×3).','Add: 20/24 + 9/24 = 29/24.','Convert: 29/24 = 1 and 5/24.'],
+      final:'Answer: C — 1 5/24 miles total (note: B and C show the same value — 29/24 = 1 5/24)'
+    },
+    { type:'oe', text:'Solve: 7/8 − 1/3. Show how you find the LCD and convert both fractions.',
+      steps:['Find LCD of 8 and 3: 8×3 = 24 (no smaller common multiple). LCD = 24.','Convert 7/8: multiply top and bottom by 3 → 21/24.','Convert 1/3: multiply top and bottom by 8 → 8/24.','Subtract: 21/24 − 8/24 = 13/24.','Check: 13 and 24 share no common factors. Already in simplest form.'],
+      final:'7/8 − 1/3 = 13/24'
+    }
+  ],
+  '5.3.K': [
+    { type:'mc', text:'A baker used 3 1/4 cups of flour for bread and 1 2/3 cups for muffins. How much flour was used in total?',
+      options:[{l:'A',t:'4 3/7 cups'},{l:'B',t:'4 11/12 cups'},{l:'C',t:'5 1/12 cups'},{l:'D',t:'5 cups'}],
+      answer:1,
+      steps:['LCD of 4 and 3 = 12.','Convert: 3 1/4 = 3 3/12. Convert: 1 2/3 = 1 8/12.','Add whole numbers: 3 + 1 = 4. Add fractions: 3/12 + 8/12 = 11/12.','Total: 4 11/12 cups.'],
+      final:'Answer: B — 4 11/12 cups of flour'
+    },
+    { type:'mc', text:'James had 6 1/2 feet of rope. He cut off 2 3/4 feet. How much rope remains?',
+      options:[{l:'A',t:'3 1/4 feet'},{l:'B',t:'3 3/4 feet'},{l:'C',t:'4 1/4 feet'},{l:'D',t:'4 3/4 feet'}],
+      answer:1,
+      steps:['LCD of 2 and 4 = 4.','Convert: 6 1/2 = 6 2/4. Convert: 2 3/4 stays as is.','Fraction subtraction: 2/4 − 3/4 is negative — borrow 1 from the whole: 6 2/4 becomes 5 6/4.','Subtract: 5 6/4 − 2 3/4 = 3 3/4.'],
+      final:'Answer: B — 3 3/4 feet of rope remain'
+    },
+    { type:'oe', text:'Explain why you need to borrow when solving 5 1/6 − 2 5/6, then complete the subtraction.',
+      steps:['LCD of both fractions is already 6.','The fraction part: 1/6 − 5/6. Since 1 < 5, we cannot subtract without borrowing.','Borrow 1 from the whole number: 5 1/6 becomes 4 + 1 1/6 = 4 7/6.','Now subtract: 4 7/6 − 2 5/6 = 2 2/6 = 2 1/3.'],
+      final:'5 1/6 − 2 5/6 = 2 1/3 (after borrowing, simplify 2/6 = 1/3)'
+    }
+  ],
+  '5.4.B': [
+    { type:'mc', text:'Luis runs 2 1/2 miles on Monday, 1 3/4 miles on Wednesday, and wants to reach 6 miles total this week. How many miles must he run on Friday?',
+      options:[{l:'A',t:'1 1/4 miles'},{l:'B',t:'1 3/4 miles'},{l:'C',t:'2 miles'},{l:'D',t:'2 3/4 miles'}],
+      answer:1,
+      steps:['Step 1: Add Monday and Wednesday miles. LCD of 2 and 4 = 4. 2 1/2 = 2 2/4. Total: 2 2/4 + 1 3/4 = 4 1/4.','Step 2: Subtract from goal: 6 − 4 1/4. Convert 6 = 5 4/4. 5 4/4 − 4 1/4 = 1 3/4.'],
+      final:'Answer: B — Luis needs to run 1 3/4 miles on Friday'
+    },
+    { type:'mc', text:'A recipe needs 2 1/3 cups of sugar. Ana wants to triple the recipe. How much sugar does she need?',
+      options:[{l:'A',t:'5 cups'},{l:'B',t:'6 cups'},{l:'C',t:'7 cups'},{l:'D',t:'6 2/3 cups'}],
+      answer:2,
+      steps:['Tripling = multiplying by 3. Convert 2 1/3 to improper fraction: 7/3.','Multiply: 7/3 × 3 = 21/3 = 7.','Ana needs exactly 7 cups of sugar.'],
+      final:'Answer: C — 7 cups of sugar'
+    },
+    { type:'oe', text:'Sara had 4 1/2 yards of fabric. She used 1 2/3 yards for a shirt and 1 1/4 yards for a hat. How much fabric is left? Show all steps.',
+      steps:['<strong>Step 1:</strong> Add fabric used: 1 2/3 + 1 1/4. LCD = 12. → 1 8/12 + 1 3/12 = 2 11/12.','<strong>Step 2:</strong> Subtract from original: 4 1/2 − 2 11/12. LCD = 12. 4 1/2 = 4 6/12.','Since 6/12 < 11/12, borrow: 3 18/12 − 2 11/12 = 1 7/12.'],
+      final:'Sara has 1 7/12 yards of fabric remaining.'
+    }
+  ],
+  '5.3.H': [
+    { type:'mc', text:'A recipe uses 3/4 cup of sugar. If you make 2/3 of the recipe, how much sugar do you need?',
+      options:[{l:'A',t:'1/2 cup'},{l:'B',t:'5/7 cup'},{l:'C',t:'2/3 cup'},{l:'D',t:'3/4 cup'}],
+      answer:0,
+      steps:['"2/3 of 3/4" means multiply: 2/3 × 3/4.','Multiply numerators: 2 × 3 = 6. Multiply denominators: 3 × 4 = 12.','Result: 6/12. Simplify: GCF = 6. 6/12 = 1/2.'],
+      final:'Answer: A — 1/2 cup of sugar'
+    },
+    { type:'mc', text:'What is 2 1/2 × 1 1/3?',
+      options:[{l:'A',t:'2 1/6'},{l:'B',t:'3 1/3'},{l:'C',t:'3 2/3'},{l:'D',t:'2 2/3'}],
+      answer:1,
+      steps:['Convert to improper fractions: 2 1/2 = 5/2 and 1 1/3 = 4/3.','Multiply: (5 × 4) / (2 × 3) = 20/6.','Simplify: 20/6 = 10/3. Convert: 10/3 = 3 1/3.'],
+      final:'Answer: B — 3 1/3'
+    },
+    { type:'oe', text:'A garden is 4/5 of a kilometer long and 3/4 of a kilometer wide. What is the area of the garden?',
+      steps:['Area = length × width = 4/5 × 3/4.','Multiply numerators: 4 × 3 = 12.','Multiply denominators: 5 × 4 = 20.','Result: 12/20. Simplify: GCF = 4. 12/20 = 3/5.'],
+      final:'The area of the garden is 3/5 square kilometers.'
+    }
+  ],
+  // ── SCIENCE QUESTIONS ──
+  '5.1(A)': [
+    { type:'mc', text:'Which question is TESTABLE in a classroom investigation?',
+      options:[{l:'A',t:'Why is the ocean so beautiful?'},{l:'B',t:'Does the amount of sunlight affect how tall a bean plant grows?'},{l:'C',t:'Which planet is the most interesting?'},{l:'D',t:'Why do cats meow?'}],
+      answer:1,
+      steps:['A testable question must be measurable and investigable through an experiment.','Option A ("beautiful?") is an opinion — not measurable.','Option C ("interesting?") is subjective.','Option D ("why do cats meow?") cannot be tested in a classroom experiment.','Option B can be tested: plant two identical beans with different amounts of sunlight and measure height. ✓'],
+      final:'Answer: B — It specifies what is being changed (sunlight) and what is being measured (height).'
+    },
+    { type:'mc', text:'A student wonders why her plant died. Which is the BEST scientific question to investigate?',
+      options:[{l:'A',t:'Why does everything die eventually?'},{l:'B',t:'Does watering frequency affect whether a plant survives?'},{l:'C',t:'What type of music do plants prefer?'},{l:'D',t:'Are plants sad when they die?'}],
+      answer:1,
+      steps:['The student wants to understand what caused the plant to die.','A testable question should be specific and point toward an experiment.','Option B is clear: change watering frequency, observe if plants survive. Both variables are measurable.','The other options are not scientifically testable in a meaningful way.'],
+      final:'Answer: B — This question leads directly to a controlled experiment with measurable results.'
+    },
+    { type:'oe', text:'Rewrite this question to make it testable: "Does cold weather affect dogs?"',
+      steps:['The original question is vague — "affect" how? In what way?','A testable question needs: (1) a specific independent variable (what you change) and (2) a specific measurable dependent variable (what you measure).','Better question: "Does the outside temperature affect how much water a dog drinks per hour?"','Or: "Do dogs sleep more hours per day in cold weather vs. warm weather?"'],
+      final:'Example of a testable question: "Does outdoor temperature below 50°F cause dogs to drink fewer ounces of water compared to days above 70°F?"'
+    }
+  ],
+  '5.1(B)': [
+    { type:'mc', text:'A student wants to test whether the color of light affects plant growth. Which setup is FAIR?',
+      options:[{l:'A',t:'Use two different plants with different soils'},{l:'B',t:'Use the same plant species, same soil, same water — only change the light color'},{l:'C',t:'Give one plant red light and more water'},{l:'D',t:'Use one plant and change the light color every day'}],
+      answer:1,
+      steps:['A fair test changes ONLY ONE variable (the independent variable) at a time.','Option A: two different plants AND different soil = two variables changing. Not fair.','Option C: red light AND more water = two variables changing. Not fair.','Option D: only one plant with no control group. Cannot compare results.','Option B: same species, same soil, same water, only light color changes = FAIR ✓'],
+      final:'Answer: B — Only the light color changes; everything else is kept the same.'
+    },
+    { type:'mc', text:'In an experiment testing whether salt affects boiling time of water, what is the DEPENDENT variable?',
+      options:[{l:'A',t:'Amount of salt added'},{l:'B',t:'Type of pot used'},{l:'C',t:'Time for water to boil'},{l:'D',t:'Amount of water'}],
+      answer:2,
+      steps:['The independent variable is what you CHANGE (amount of salt).','The dependent variable is what you MEASURE as a result.','The control variables are things you keep the SAME (pot type, water amount, stove heat).','What are we measuring to see the effect? The TIME it takes to boil.'],
+      final:'Answer: C — The time to boil is the dependent variable (it depends on how much salt is added).'
+    },
+    { type:'oe', text:'A student wants to find out if the height of a ramp affects how far a toy car travels. Identify the independent variable, dependent variable, and two control variables.',
+      steps:['<strong>Independent variable</strong> (what you change): the height of the ramp.','<strong>Dependent variable</strong> (what you measure): the distance the toy car travels.','<strong>Control variables</strong> (what stays the same): the same toy car, the same surface (carpet vs. tile), the same ramp width, the same starting position for the car.'],
+      final:'IV: ramp height | DV: distance car travels | Controls: same car, same surface, same ramp material, same release point'
+    }
+  ],
+  '5.1.F': [
+    { type:'mc', text:'A student grew plants with and without fertilizer. Fertilizer plants grew 14 cm; no-fertilizer plants grew 8 cm. Which conclusion is VALID?',
+      options:[{l:'A',t:'Plants with fertilizer are happier'},{l:'B',t:'Plants with fertilizer are always better'},{l:'C',t:'Fertilizer increased plant growth by 6 cm in this experiment'},{l:'D',t:'All plants should use fertilizer'}],
+      answer:2,
+      steps:['A valid conclusion must be supported directly by the DATA collected.','Option A ("happier") is not measurable — we can\'t measure happiness.','Option B ("always") is too broad — this was only one experiment.','Option D makes a recommendation beyond what the data shows.','Option C is directly supported: 14 − 8 = 6 cm difference. ✓'],
+      final:'Answer: C — This conclusion states exactly what the data shows: a 6 cm difference.'
+    },
+    { type:'mc', text:'After testing 3 paper airplane designs, a student concludes: "Paper planes with pointed noses always fly farther than flat-nosed planes." What is WRONG with this conclusion?',
+      options:[{l:'A',t:'The student should not have tested paper planes'},{l:'B',t:'The word "always" makes a broader claim than 3 trials can support'},{l:'C',t:'The student should have used more colors'},{l:'D',t:'Nothing is wrong with this conclusion'}],
+      answer:1,
+      steps:['Valid conclusions are limited to what the DATA actually shows.','The student only tested 3 designs in one trial. That\'s a very small sample.','The word "always" implies every paper plane ever made — far beyond this experiment\'s data.','A better conclusion: "In this experiment, pointed-nose planes flew an average of ___ cm farther."'],
+      final:'Answer: B — "Always" oversteps what 3 trials can prove. A valid conclusion stays within the scope of the data collected.'
+    },
+    { type:'oe', text:'Rewrite this invalid conclusion to make it valid, based on the data: Data: Ice melted in 5 min at 80°F and in 15 min at 50°F. Conclusion: "Heat makes ice melt."',
+      steps:['The current conclusion ("Heat makes ice melt") is too vague and goes beyond the data.','The data shows specific temperatures and specific times.','A valid conclusion includes the actual measured values.','Better: "At 80°F, the ice melted in 5 minutes — 10 minutes faster than at 50°F — showing that higher temperature increases the rate of melting."'],
+      final:'Valid conclusion: "The ice melted 10 minutes faster at 80°F than at 50°F, showing that higher temperatures increase the melting rate of ice."'
+    }
+  ],
+  '5.1.G': [
+    { type:'mc', text:'A student claims: "My tomato plant grew better because I talked to it every day." What is the biggest FLAW in this claim?',
+      options:[{l:'A',t:'Tomatoes cannot grow in a garden'},{l:'B',t:'The student did not have a control plant grown without talking to it'},{l:'C',t:'The student should have used a different vegetable'},{l:'D',t:'Talking to plants is scientifically impossible'}],
+      answer:1,
+      steps:['For a valid scientific claim, you need evidence from a controlled experiment.','If there was no "control" plant (same conditions but NOT talked to), we cannot know if talking made a difference.','Maybe the plant grew well because of sunlight, water, or good soil — not the talking.','Without a comparison group, the claim is not scientifically supported.'],
+      final:'Answer: B — Without a control plant, there\'s no way to know if talking caused the better growth.'
+    },
+    { type:'mc', text:'An ad claims: "Children who eat SuperVite vitamins score 20% higher on tests!" What should a scientist ask first?',
+      options:[{l:'A',t:'How much do the vitamins cost?'},{l:'B',t:'Was there a control group of children who did NOT take vitamins?'},{l:'C',t:'What flavor are the vitamins?'},{l:'D',t:'Do scientists like vitamins?'}],
+      answer:1,
+      steps:['A scientist evaluates claims by looking for controlled experiments.','The key question is: did children who took vitamins score higher COMPARED TO similar children who did NOT take vitamins?','Without a control group, the 20% increase might be due to other factors (better sleep, study habits, etc.).','This is the first and most important scientific question to ask.'],
+      final:'Answer: B — A control group (no vitamins) is essential to prove the vitamins caused the improvement.'
+    },
+    { type:'oe', text:'A scientist gives 10 plants a new fertilizer and they all grow well. She says, "This proves the fertilizer works great!" Name two questions a critical scientist should ask before accepting this conclusion.',
+      steps:['<strong>Question 1:</strong> Was there a control group? Were 10 other plants grown under the same conditions WITHOUT fertilizer? Without this, we cannot attribute the growth to the fertilizer.','<strong>Question 2:</strong> Was the experiment repeated? One set of 10 plants is a small sample. What if the results were due to chance, unusual weather, or the specific seeds used?','<strong>Bonus question:</strong> Were all other variables controlled? (Same soil, same water, same sunlight?)'],
+      final:'Two critical questions: (1) Was there a control group without fertilizer? (2) Has the experiment been repeated to confirm results?'
+    }
+  ],
+  '5.2(B)': [
+    { type:'mc', text:'A student records plant heights each day: Day 1: 2cm, Day 2: 4cm, Day 3: 6cm, Day 4: 8cm. What pattern do they see?',
+      options:[{l:'A',t:'The plant grows randomly'},{l:'B',t:'The plant grows 2 cm per day in a constant pattern'},{l:'C',t:'The plant stops growing after Day 4'},{l:'D',t:'The plant grew fastest on Day 1'}],
+      answer:1,
+      steps:['Look at the differences between each day: 4−2=2, 6−4=2, 8−6=2.','The plant grows exactly 2 cm each day — this is a constant rate of growth.','This is a linear pattern — the growth per day stays the same.','A prediction for Day 5: 8 + 2 = 10 cm.'],
+      final:'Answer: B — The plant grows at a constant rate of 2 cm per day.'
+    },
+    { type:'mc', text:'A data table shows that as temperature increases, ice cream sales also increase. What does this relationship show?',
+      options:[{l:'A',t:'Hot weather causes ice cream to melt'},{l:'B',t:'Ice cream causes hot weather'},{l:'C',t:'Higher temperatures are associated with increased ice cream sales'},{l:'D',t:'People only eat ice cream on cold days'}],
+      answer:2,
+      steps:['When two things increase together, we say they are positively correlated.','However, correlation does NOT prove causation — we can\'t say one causes the other.','Hot weather does not "cause" ice cream sales — people choose to buy ice cream when hot.','The scientifically correct statement is that higher temperature is ASSOCIATED with increased sales.'],
+      final:'Answer: C — The data shows a positive relationship (correlation), not that one causes the other.'
+    },
+    { type:'oe', text:'A scientist tracks rainfall and crop yield for 5 years. As rainfall decreases, crop yield also decreases. What pattern exists? What prediction could the scientist make?',
+      steps:['Pattern: As rainfall decreases, crop yield also decreases. This is a <strong>positive correlation</strong> — both variables move in the same direction.','Prediction: If rainfall continues to decrease in Year 6, we predict crop yield will also continue to decrease.','The scientist should also ask: Is this a direct cause-and-effect? (Yes, plants need water to grow — this IS causal.)'],
+      final:'Pattern: Positive correlation — less rain = less crop yield. Prediction: If next year\'s rainfall is below average, crop yields will likely be below average too.'
+    }
+  ],
+  '5.3.A': [
+    { type:'mc', text:'Which correctly describes the difference between a hypothesis and a scientific theory?',
+      options:[{l:'A',t:'A theory is just a guess, a hypothesis has been proven'},{l:'B',t:'A hypothesis is an untested prediction; a theory is well-supported by extensive evidence'},{l:'C',t:'They mean the same thing in science'},{l:'D',t:'A theory is tested once; a hypothesis is tested many times'}],
+      answer:1,
+      steps:['A <strong>hypothesis</strong> is a testable prediction made BEFORE an experiment — it\'s an educated guess.','A <strong>theory</strong> in science is NOT just a guess. It is an explanation that has been tested by many scientists, many times, and is supported by massive amounts of evidence.','Examples of theories: Germ Theory, Theory of Gravity, Theory of Evolution — all very well established.','In everyday language "theory" means a guess. In science, it means the opposite.'],
+      final:'Answer: B — A hypothesis is a pre-experiment prediction; a theory is a robust, evidence-supported explanation.'
+    },
+    { type:'mc', text:'Gravity pulls objects toward Earth\'s center at a predictable rate. This is best classified as:',
+      options:[{l:'A',t:'A hypothesis'},{l:'B',t:'A guess'},{l:'C',t:'A scientific law'},{l:'D',t:'An experiment'}],
+      answer:2,
+      steps:['A <strong>scientific law</strong> describes WHAT always happens under certain conditions (without explaining why).','Gravity always pulls objects toward Earth — this is predictable, measurable, and constant.','It does not explain WHY gravity exists (that\'s the Theory of General Relativity).','"Objects fall at 9.8 m/s² near Earth\'s surface" = a law.'],
+      final:'Answer: C — Scientific law (describes what happens; the "why" is explained by Einstein\'s theory)'
+    },
+    { type:'oe', text:'Sort these into hypothesis, theory, and law: (1) "I think plants grow faster with music." (2) "Earth orbits the Sun." (3) "Objects at rest stay at rest unless acted on by a force."',
+      steps:['(1) "I think plants grow faster with music" — this is a prediction before testing. → <strong>Hypothesis</strong>','(2) "Earth orbits the Sun" — this is the Heliocentric Theory, supported by centuries of astronomical observation. → <strong>Theory</strong>','(3) "Objects at rest stay at rest unless acted on by a force" — this is Newton\'s First Law of Motion, describing what ALWAYS happens. → <strong>Scientific Law</strong>'],
+      final:'(1) Hypothesis | (2) Theory (Heliocentric Theory) | (3) Scientific Law (Newton\'s First Law)'
+    }
+  ],
+  '3.5(D)': [
+    { type:'mc', text:'Which of the following is a PHYSICAL change?',
+      options:[{l:'A',t:'Wood burning in a fireplace'},{l:'B',t:'Baking soda and vinegar fizzing together'},{l:'C',t:'Ice cube melting in a glass'},{l:'D',t:'Rust forming on iron'}],
+      answer:2,
+      steps:['A physical change alters the form or appearance of matter but does NOT create a new substance.','Ice melting: H₂O (solid) → H₂O (liquid). Same substance, different state. Reversible by freezing. → <strong>Physical</strong> ✓','Wood burning: creates ash, smoke, CO₂ — entirely new substances. → Chemical change.','Baking soda + vinegar: produces CO₂ gas and new compounds. → Chemical change.','Rust: iron reacts with oxygen to form iron oxide (new substance). → Chemical change.'],
+      final:'Answer: C — Ice melting is a physical change (H₂O stays H₂O, just changes state).'
+    },
+    { type:'mc', text:'A student cuts a piece of aluminum foil into tiny pieces. What type of change occurred?',
+      options:[{l:'A',t:'Chemical, because the pieces look different'},{l:'B',t:'Physical, because the aluminum is still aluminum'},{l:'C',t:'Chemical, because a new substance was formed'},{l:'D',t:'Neither physical nor chemical'}],
+      answer:1,
+      steps:['Cutting changes the shape and size of the aluminum, but the material is still aluminum (Al).','No new substance is formed — only the form changed.','This is a <strong>physical change</strong>: same substance, different shape/size.','Physical change clue: it\'s reversible in principle (you could melt the pieces and reform the foil).'],
+      final:'Answer: B — Cutting is a physical change; aluminum remains aluminum.'
+    },
+    { type:'oe', text:'Compare and contrast physical and chemical changes. Give one real-life example of each from your kitchen.',
+      steps:['<strong>Physical change:</strong> Changes the form, shape, size, or state of matter — but the substance stays the same. Reversible.','<strong>Chemical change:</strong> Creates one or more NEW substances with different properties. Often irreversible.','<strong>Kitchen physical change example:</strong> Slicing an apple — the apple is still apple, just smaller pieces.','<strong>Kitchen chemical change example:</strong> Frying an egg — raw egg (liquid protein) becomes cooked egg (solid new protein structure). Cannot be "un-cooked."'],
+      final:'Physical change: slicing apple (still apple). Chemical change: frying egg (new substance formed, cannot be reversed).'
+    }
+  ],
+  '5.6.A': [
+    { type:'mc', text:'When you turn on a flashlight, which energy transformation occurs?',
+      options:[{l:'A',t:'Light energy → electrical energy'},{l:'B',t:'Electrical energy → mechanical energy'},{l:'C',t:'Chemical energy → electrical energy → light energy'},{l:'D',t:'Sound energy → light energy'}],
+      answer:2,
+      steps:['Trace the energy through the flashlight step by step.','The battery stores <strong>chemical energy</strong> (from its chemical reactions).','When switched on, chemical energy converts to <strong>electrical energy</strong> (current flows).','The electrical energy powers the bulb, which converts it to <strong>light energy</strong> (and some thermal/heat).'],
+      final:'Answer: C — Chemical → Electrical → Light energy'
+    },
+    { type:'mc', text:'A person rides a bicycle and rings the bell. Which types of energy are produced?',
+      options:[{l:'A',t:'Only mechanical energy'},{l:'B',t:'Mechanical energy and electrical energy'},{l:'C',t:'Mechanical energy and sound energy'},{l:'D',t:'Sound energy and chemical energy'}],
+      answer:2,
+      steps:['Riding the bicycle: legs provide <strong>mechanical energy</strong> (motion).','Ringing the bell: the bell vibrates and produces <strong>sound energy</strong>.','Both are produced simultaneously — mechanical (movement) and sound (vibrations).'],
+      final:'Answer: C — Mechanical (movement of bike) and sound (bell ringing)'
+    },
+    { type:'oe', text:'Describe TWO energy transformations that happen in your home. For each, name the starting energy type and the ending energy type.',
+      steps:['<strong>Transformation 1: Microwave oven</strong> — Electrical energy → Thermal (heat) energy. Electricity powers the magnetron, which produces microwaves that heat food molecules.','<strong>Transformation 2: Guitar or speaker</strong> — Electrical energy → Sound energy. Electrical signals make the speaker cone vibrate, producing sound waves.','<strong>Bonus:</strong> Blender — Electrical → Mechanical (spinning blade)'],
+      final:'Example 1: Microwave — electrical → thermal. Example 2: Speaker — electrical → sound energy.'
+    }
+  ],
+  '5.6.B': [
+    { type:'mc', text:'A rabbit eats grass. A fox eats the rabbit. Which correctly describes the role of the Sun in this food chain?',
+      options:[{l:'A',t:'The Sun directly feeds the fox'},{l:'B',t:'The Sun\'s energy is captured by grass through photosynthesis and passed through the chain'},{l:'C',t:'The Sun has no role in this food chain'},{l:'D',t:'The rabbit creates its own energy from sunlight'}],
+      answer:1,
+      steps:['Trace energy back to its source: Fox ← rabbit ← grass ← <strong>Sun</strong>.','Grass is a producer: it uses photosynthesis to convert sunlight → stored chemical energy (in leaves/stems).','The rabbit eats grass and gets that stored solar energy.','The fox eats the rabbit and gets energy that originally came from the Sun.','The Sun is the ORIGINAL energy source for nearly all food chains on Earth.'],
+      final:'Answer: B — The Sun\'s energy flows through the chain: sunlight → grass → rabbit → fox.'
+    },
+    { type:'mc', text:'Why are fossil fuels (coal, oil) called "stored solar energy"?',
+      options:[{l:'A',t:'Because they are found near the Sun'},{l:'B',t:'Because ancient plants captured sunlight via photosynthesis; those plants became fossil fuels over millions of years'},{l:'C',t:'Because we use them to power solar panels'},{l:'D',t:'Because they glow in sunlight'}],
+      answer:1,
+      steps:['Millions of years ago, plants and organisms lived and captured sunlight through photosynthesis.','When those organisms died, they were buried under sediment.','Over millions of years, heat and pressure transformed them into coal, oil, and natural gas.','When we burn fossil fuels, we are releasing ancient stored solar energy.'],
+      final:'Answer: B — Fossil fuels are ancient plants/organisms that stored solar energy through photosynthesis.'
+    },
+    { type:'oe', text:'Trace the Sun\'s energy through this food chain: Sun → corn → cow → human. Explain what happens to the energy at each step.',
+      steps:['<strong>Sun → Corn:</strong> The corn plant absorbs sunlight and uses photosynthesis to convert light energy into chemical energy stored in sugars/starches.','<strong>Corn → Cow:</strong> The cow eats corn. Stored chemical energy transfers to the cow. (Some energy is lost as heat during digestion.)','<strong>Cow → Human:</strong> The human eats beef. Chemical energy from the cow transfers to the human\'s body for movement, growth, and warmth. (Again, some energy lost as heat.)','Key point: Energy is never created or destroyed, but some is lost as heat at each step — that\'s why it takes many pounds of corn to produce one pound of beef.'],
+      final:'Sun → corn (photosynthesis captures light) → cow (eats corn, gets stored energy) → human (eats beef, gets energy for life functions). Energy is lost as heat at each transfer.'
+    }
+  ],
+  '5.6.D': [
+    { type:'mc', text:'A metal spoon is left in a pot of hot soup. After a few minutes, the handle becomes warm. What type of heat transfer is this?',
+      options:[{l:'A',t:'Convection'},{l:'B',t:'Radiation'},{l:'C',t:'Conduction'},{l:'D',t:'Evaporation'}],
+      answer:2,
+      steps:['Heat transfer through direct contact between materials is called <strong>conduction</strong>.','The hot soup touches the metal spoon. Metal is an excellent conductor.','Heat energy passes from the high-temperature soup, through the metal spoon, to the cooler handle.','You feel warmth when you touch the handle because heat traveled through the metal.'],
+      final:'Answer: C — Conduction (heat travels through direct contact, through the metal spoon)'
+    },
+    { type:'mc', text:'You feel the warmth of the Sun on your skin even though you are inside a room with the window closed. What type of heat transfer is this?',
+      options:[{l:'A',t:'Conduction'},{l:'B',t:'Convection'},{l:'C',t:'Radiation'},{l:'D',t:'Condensation'}],
+      answer:2,
+      steps:['The Sun is 93 million miles away — there is no direct contact, and no material connecting you to the Sun.','<strong>Radiation</strong> is heat transfer through electromagnetic waves (like infrared light). It needs NO material to travel through.','Sunlight travels through the vacuum of space, through the glass window, and warms your skin.','This is radiation — the same way a campfire warms you from a distance.'],
+      final:'Answer: C — Radiation (heat energy travels as electromagnetic waves, no material needed)'
+    },
+    { type:'oe', text:'Describe how all THREE types of heat transfer (conduction, convection, radiation) occur when you sit near a campfire on a cold night.',
+      steps:['<strong>Radiation:</strong> You feel the warmth of the fire on your face even without touching it. The fire emits infrared radiation that travels through the air to your skin.','<strong>Convection:</strong> Hot air near the fire is less dense and rises. Cooler air moves in from the sides to replace it, creating a circulation pattern around the fire (the "campfire breeze" you feel).','<strong>Conduction:</strong> If you hold a metal roasting stick in the fire, heat travels through the metal to your hand — that\'s conduction through direct contact.'],
+      final:'All three at once: Radiation (warmth on face), Convection (hot air rising, cool air moving in), Conduction (heat through the metal stick).'
+    }
+  ],
+  '4.7': [
+    { type:'mc', text:'A polar bear has thick fur, a layer of fat, and white coloring. How do these adaptations help it survive?',
+      options:[{l:'A',t:'They help it run faster than other bears'},{l:'B',t:'They help it stay warm, store energy, and camouflage in its snowy Arctic environment'},{l:'C',t:'They make it look more attractive'},{l:'D',t:'They help it digest plants more efficiently'}],
+      answer:1,
+      steps:['Each adaptation serves a survival purpose in the Arctic environment.','<strong>Thick fur:</strong> traps body heat in extreme cold.','<strong>Fat layer:</strong> provides insulation AND energy storage for long periods without food.','<strong>White coloring:</strong> camouflage in snow — helps the bear sneak up on prey (seals).','All adaptations connect directly to the organism\'s specific environment needs.'],
+      final:'Answer: B — All three adaptations are specific to surviving in the cold, snowy Arctic.'
+    },
+    { type:'mc', text:'When a forest is cleared for housing, which is the most likely immediate effect on organisms that lived there?',
+      options:[{l:'A',t:'They will quickly adapt to living in houses'},{l:'B',t:'They will lose their habitat and food sources, causing population decline'},{l:'C',t:'They will move to the ocean'},{l:'D',t:'The forest will grow back within a month'}],
+      answer:1,
+      steps:['Every organism has specific needs: food, shelter, water, and space.','When a forest is cleared: shelter (trees/undergrowth) is removed, food sources (insects, berries, seeds) disappear, nesting sites are destroyed.','Animals cannot quickly adapt their biology to new environments.','The most immediate effect: organisms leave (migrate) or populations decline due to loss of resources.'],
+      final:'Answer: B — Habitat destruction removes food, shelter, and space — the essential needs of all organisms living there.'
+    },
+    { type:'oe', text:'A cactus survives in the desert, while a fern survives in a rainforest. Compare the adaptations each plant needs and explain why each would struggle in the other\'s environment.',
+      steps:['<strong>Cactus adaptations:</strong> thick waxy skin (reduces water loss), deep/wide roots (capture any available water), stores water in its thick stem, spines (protect against animals seeking water).','<strong>Fern adaptations:</strong> broad flat leaves (maximize light capture in shade), shallow roots (lots of surface water), no water-storage structures.','<strong>Cactus in a rainforest:</strong> too much moisture, likely to rot; spines unnecessary; might be shaded by taller trees.','<strong>Fern in a desert:</strong> would rapidly lose water through its broad leaves, roots cannot reach deep water, no water storage = death from dehydration.'],
+      final:'Each plant\'s adaptations are specific to its environment. Placing either plant in the opposite biome would remove the conditions it needs to survive.'
+    }
+  ],
+  '5.6.C': [
+    { type:'mc', text:'A drought reduces the grass in a meadow by 80%. What is the most likely effect on the rabbit population?',
+      options:[{l:'A',t:'The rabbit population will increase'},{l:'B',t:'The rabbit population will stay the same'},{l:'C',t:'The rabbit population will decrease due to food scarcity'},{l:'D',t:'Rabbits will start eating rocks'}],
+      answer:2,
+      steps:['Rabbits depend on grass as their primary food source (a limiting resource).','If grass is reduced by 80%, much less food is available for rabbits.','When food is scarce: some rabbits starve, others migrate, reproduction decreases.','This is a classic example of a <strong>limiting factor</strong> controlling population size.'],
+      final:'Answer: C — Less grass (food) = fewer rabbits can be supported in that area.'
+    },
+    { type:'mc', text:'Which is the BEST definition of a "limiting factor" in ecology?',
+      options:[{l:'A',t:'A factor that allows unlimited population growth'},{l:'B',t:'A resource or condition that restricts how large a population can grow'},{l:'C',t:'A type of animal that eats other animals'},{l:'D',t:'The total amount of sunlight in an ecosystem'}],
+      answer:1,
+      steps:['A limiting factor is any resource or condition that is in short supply and therefore LIMITS population size.','Common limiting factors: food, water, shelter, space, disease, predators.','When a limiting factor decreases, the population it affects tends to decrease.','When a limiting factor increases (becomes abundant), population tends to grow.'],
+      final:'Answer: B — A limiting factor restricts population growth by limiting access to essential resources.'
+    },
+    { type:'oe', text:'A pond ecosystem has 500 frogs. A drought causes water levels to drop significantly. Predict and explain what will happen to the frog population over the next several months.',
+      steps:['Frogs need water to survive, reproduce, and lay eggs. Water is a limiting resource for frogs.','As water levels drop: shallow areas dry up (loss of habitat), tadpoles die without water to develop in, food (insects near water) decreases, frogs begin to leave or die.','<strong>Short-term:</strong> Frog population decreases — some die from dehydration, some migrate to other water sources.','<strong>Long-term:</strong> If the drought continues, population may crash to very low numbers or local extinction in that pond.'],
+      final:'The frog population will decrease significantly. Water is a limiting factor for frogs — less water means less habitat, fewer breeding sites, less food, and higher mortality.'
+    }
+  ],
+  '4.2.B': [
+    { type:'mc', text:'A student measures the length of a caterpillar. Which tool and unit should they use?',
+      options:[{l:'A',t:'Thermometer in degrees Celsius'},{l:'B',t:'Balance in grams'},{l:'C',t:'Ruler in centimeters'},{l:'D',t:'Graduated cylinder in milliliters'}],
+      answer:2,
+      steps:['Match the tool to what you are measuring.','Thermometer → temperature (°C or °F).','Balance → mass (grams or kilograms).','Graduated cylinder → liquid volume (mL or L).','<strong>Ruler → length (cm, mm, m)</strong>. A caterpillar\'s length is a distance measurement. ✓'],
+      final:'Answer: C — Ruler in centimeters (or millimeters for a small caterpillar)'
+    },
+    { type:'mc', text:'A student records these temperatures over three days: 22°C, 19°C, 17°C. What does this data show?',
+      options:[{l:'A',t:'Temperature is increasing'},{l:'B',t:'Temperature is decreasing'},{l:'C',t:'Temperature stays the same'},{l:'D',t:'The thermometer is broken'}],
+      answer:1,
+      steps:['Compare the values: 22 → 19 → 17.','Each value is smaller than the one before it.','This shows a <strong>decreasing trend</strong> in temperature over the three days.','This is data analysis: reading the data and identifying the pattern it shows.'],
+      final:'Answer: B — Temperature is decreasing (22→19→17 shows a downward trend of about 2.5°C per day)'
+    },
+    { type:'oe', text:'A student wants to measure how much a plant grows each week. Design a data table they should use, including the tool and unit for each measurement.',
+      steps:['<strong>Tool needed:</strong> Ruler (or meter stick for taller plants).','<strong>Unit:</strong> centimeters (cm).','<strong>Data table design:</strong>','Row headers: Week 1, Week 2, Week 3, Week 4, Week 5.','Column headers: Date, Plant Height (cm), Growth Since Last Week (cm).','This table lets the student track total height AND calculate weekly growth rate.'],
+      final:'Data table: Date | Plant Height (cm) | Weekly Growth (cm). Tool: ruler. Unit: centimeters.'
+    }
+  ],
+  '5.2(G)': [
+    { type:'mc', text:'A student uses a globe to understand Earth\'s shape. Which is a LIMITATION of this model?',
+      options:[{l:'A',t:'It correctly shows Earth is spherical'},{l:'B',t:'It does not show real-time weather, ocean currents, or living organisms'},{l:'C',t:'It shows the continents in the wrong order'},{l:'D',t:'Globes are not scientific models'}],
+      answer:1,
+      steps:['A model accurately represents SOME aspects of the real thing, but simplifies or omits others.','The globe correctly shows: shape (sphere), relative positions of continents/oceans, axis tilt.','The globe does NOT show: current weather, traffic, ocean temperatures, human population, plant life, etc.','Recognizing what a model leaves out is critical scientific thinking.'],
+      final:'Answer: B — The globe doesn\'t show real-time conditions; it\'s a simplified representation.'
+    },
+    { type:'mc', text:'Scientists use computer models to predict hurricanes. Why can\'t these models be 100% accurate?',
+      options:[{l:'A',t:'Computers are not powerful enough'},{l:'B',t:'All models simplify reality and cannot account for every variable in a complex system like weather'},{l:'C',t:'Hurricanes are impossible to study'},{l:'D',t:'Computer models are not scientific'}],
+      answer:1,
+      steps:['All models simplify reality — they cannot include every single variable.','Weather involves billions of interacting factors: air molecules, ocean temperatures, land features, etc.','No model can perfectly capture all of these — there will always be some inaccuracy.','This is why weather forecasts become less accurate the further into the future they predict.'],
+      final:'Answer: B — Models are simplifications. Complex systems like weather have too many variables to model perfectly.'
+    },
+    { type:'oe', text:'You are building a model of the solar system for a school project. Name two things your model will show accurately and two things it will not be able to show.',
+      steps:['<strong>Will show accurately:</strong>','(1) The ORDER of the planets (Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune).','(2) The rough RELATIVE SIZES of the planets compared to each other.','<strong>Will NOT be able to show:</strong>','(1) The true DISTANCES between planets — these are impossibly large to show to scale in a classroom.','(2) The actual SPEED of each planet\'s orbit (inner planets orbit much faster than outer ones).'],
+      final:'Accurate: planet order, relative sizes. Inaccurate/omitted: true scale distances, orbital speeds.'
+    }
+  ],
+  '5.7.A': [
+    { type:'mc', text:'Scientists find a fossil of a sea creature in a desert. What does this most likely indicate?',
+      options:[{l:'A',t:'Sea creatures can live in deserts'},{l:'B',t:'The fossil was placed there by humans'},{l:'C',t:'That area was once covered by an ocean millions of years ago'},{l:'D',t:'All deserts used to be oceans last year'}],
+      answer:2,
+      steps:['Fossils form when organisms are buried by sediment (sand, mud) and preserved over millions of years.','Marine (sea) fossils only form in aquatic environments.','If we find a sea creature fossil in a desert, the environment there has changed dramatically over millions of years.','This is a key principle of geology: fossils reveal ancient environments.'],
+      final:'Answer: C — Marine fossils in a desert indicate that area was once an ocean.'
+    },
+    { type:'mc', text:'In a cliff face showing multiple rock layers, where would you find the OLDEST fossils?',
+      options:[{l:'A',t:'In the top layer'},{l:'B',t:'Scattered randomly throughout'},{l:'C',t:'In the bottom layer'},{l:'D',t:'Only in volcanic rock layers'}],
+      answer:2,
+      steps:['Sedimentary rock layers form like stacking pancakes — each new layer goes ON TOP of the old one.','The principle of <strong>superposition</strong>: in undisturbed rock layers, older rocks are on the BOTTOM.','The bottom layers were deposited first, millions of years ago.','Fossils in those bottom layers are therefore the oldest.'],
+      final:'Answer: C — The bottom layer contains the oldest fossils (deposited first, buried deepest).'
+    },
+    { type:'oe', text:'Explain how a fossil forms, step by step, starting with an organism dying near a river.',
+      steps:['<strong>Step 1:</strong> An organism (e.g., a fish) dies near a river and sinks to the bottom.','<strong>Step 2:</strong> Sediment (sand, mud) quickly covers the organism before it can fully decompose.','<strong>Step 3:</strong> Over thousands of years, more sediment layers pile on top. Pressure and minerals replace the organic material with rock — this is called <strong>mineralization</strong>.','<strong>Step 4:</strong> Over millions of years, the sediment compresses into sedimentary rock, with the fossil preserved inside.','<strong>Step 5:</strong> Erosion or uplift eventually exposes the rock layer, and a scientist finds the fossil.'],
+      final:'Organism dies → buried by sediment → minerals replace organic matter → compresses into rock → erosion exposes it → fossil discovered.'
+    }
+  ],
+  '5.8.A': [
+    { type:'mc', text:'Which statement describes CLIMATE, not weather?',
+      options:[{l:'A',t:'It is raining in Houston today'},{l:'B',t:'A cold front will bring frost tonight'},{l:'C',t:'Phoenix, Arizona receives an average of 8 inches of rain per year'},{l:'D',t:'A thunderstorm is expected this afternoon'}],
+      answer:2,
+      steps:['<strong>Weather</strong> = current or short-term atmospheric conditions (today, this week).','<strong>Climate</strong> = the long-term average pattern of weather in a region (over 30+ years).','Options A, B, and D all describe specific, short-term conditions. → Weather.','Option C describes the long-term average rainfall of Phoenix — that is a <strong>climate</strong> statistic.'],
+      final:'Answer: C — An annual average over many years describes climate, not daily weather.'
+    },
+    { type:'mc', text:'It snows in Dallas, Texas, for the first time in 10 years. A classmate says, "This proves the climate is getting colder!" What is wrong with this reasoning?',
+      options:[{l:'A',t:'Snow is impossible in Texas'},{l:'B',t:'One weather event cannot determine a climate change — climate is based on long-term averages'},{l:'C',t:'The classmate is correct'},{l:'D',t:'Climate never changes'}],
+      answer:1,
+      steps:['Climate is determined by 30+ years of data, not a single event.','One snowstorm (a weather event) tells us nothing about long-term climate trends.','To determine if climate is changing, scientists analyze data over decades.','Memory trick: "Climate is what you EXPECT; weather is what you GET."'],
+      final:'Answer: B — One weather event cannot define a climate trend. Climate requires decades of data.'
+    },
+    { type:'oe', text:'Explain the difference between weather and climate using Houston, Texas as your example.',
+      steps:['<strong>Weather in Houston today:</strong> 88°F, humid, partly cloudy, chance of afternoon thunderstorms. This describes current atmospheric conditions that will change tomorrow.','<strong>Climate of Houston:</strong> Hot, humid summers averaging 90°F; mild winters; about 50 inches of rainfall per year; hurricane risk from June–November. This describes the long-term pattern over 30+ years.','Key difference: Weather tells you what to wear TODAY. Climate tells you what to EXPECT living in Houston YEAR-ROUND.'],
+      final:'Weather = today\'s conditions (temporary). Climate = the long-term pattern (30+ year average). Houston\'s climate is hot and humid; today\'s weather might be sunny or stormy.'
+    }
+  ],
+  '5.8.B': [
+    { type:'mc', text:'Which process in the water cycle is powered DIRECTLY by energy from the Sun?',
+      options:[{l:'A',t:'Precipitation'},{l:'B',t:'Evaporation'},{l:'C',t:'Groundwater storage'},{l:'D',t:'Runoff'}],
+      answer:1,
+      steps:['The <strong>Sun</strong> is the energy source that drives the water cycle.','<strong>Evaporation</strong> requires heat energy — the Sun warms water surfaces (oceans, lakes, puddles) and converts liquid water to water vapor.','Precipitation, runoff, and groundwater are all RESULTS of the cycle, but they don\'t require direct solar energy to initiate.','Without the Sun\'s heat, evaporation would not occur and the water cycle would stop.'],
+      final:'Answer: B — Evaporation is directly powered by solar energy (heat from the Sun).'
+    },
+    { type:'mc', text:'Water vapor rises high into the atmosphere and forms clouds. What causes this to happen?',
+      options:[{l:'A',t:'Evaporation'},{l:'B',t:'Precipitation'},{l:'C',t:'Condensation as water vapor cools at higher altitudes'},{l:'D',t:'Runoff from mountains'}],
+      answer:2,
+      steps:['After evaporation, water vapor rises with warm air currents.','At higher altitudes, the air is cooler. As water vapor cools, it reaches the <strong>dew point</strong>.','At the dew point, water vapor <strong>condenses</strong> into tiny liquid water droplets around dust particles.','These droplets cluster together to form clouds.'],
+      final:'Answer: C — Condensation occurs as rising water vapor cools at higher altitudes, forming clouds.'
+    },
+    { type:'oe', text:'Trace a single water molecule through the complete water cycle, starting in the Pacific Ocean.',
+      steps:['<strong>Evaporation:</strong> The Sun heats the Pacific Ocean surface. Our water molecule gains enough energy to evaporate — it becomes water vapor and rises into the atmosphere.','<strong>Condensation:</strong> High in the atmosphere, it cools and condenses onto a dust particle. It is now part of a cloud droplet.','<strong>Precipitation:</strong> More droplets join. The cloud droplet gets heavy enough to fall as rain (or snow at high altitude/elevation) over the California mountains.','<strong>Runoff/Collection:</strong> It flows down the mountain in streams, into a river, and eventually back to the Pacific Ocean — or soaks into the ground (groundwater).','The cycle repeats endlessly.'],
+      final:'Ocean → evaporation (Sun\'s energy) → water vapor rises → condensation (clouds form) → precipitation (rain/snow) → runoff/groundwater → back to ocean.'
+    }
+  ],
+  '5.8.C': [
+    { type:'mc', text:'A cold front moves through a region. Which effect would you MOST likely observe?',
+      options:[{l:'A',t:'Temperatures rise significantly'},{l:'B',t:'A period of storms followed by cooler, clearer weather'},{l:'C',t:'An earthquake'},{l:'D',t:'Ocean levels rise immediately'}],
+      answer:1,
+      steps:['A cold front is when cold, denser air pushes under warmer air.','As the warmer air is pushed up quickly: it cools, moisture condenses → <strong>storms or rain</strong>.','After the front passes: the cold air settles in → <strong>cooler, clearer weather</strong>.','This is a typical, predictable weather pattern associated with cold fronts.'],
+      final:'Answer: B — Cold fronts typically bring storms as they arrive, then clear cooler weather after they pass.'
+    },
+    { type:'mc', text:'A region experiences a 3-month drought. Which of the following would most likely occur in a local river ecosystem?',
+      options:[{l:'A',t:'Fish populations would increase'},{l:'B',t:'Plants would grow taller'},{l:'C',t:'Water levels would drop and fish populations would decline'},{l:'D',t:'More clouds would form over the river'}],
+      answer:2,
+      steps:['A drought means significantly less rainfall over an extended period.','Less rainfall → rivers receive less water from runoff → <strong>water levels drop</strong>.','Lower water: less oxygen dissolved in water, less space for fish, less aquatic plant life.','Fish populations would <strong>decline</strong> as the habitat shrinks and resources become scarce.'],
+      final:'Answer: C — Drought reduces water levels, which reduces oxygen and habitat for aquatic life.'
+    },
+    { type:'oe', text:'Describe how a multi-week period of heavy rain would affect three different parts of a local environment: (1) soil, (2) plant life, (3) a local stream.',
+      steps:['<strong>(1) Soil:</strong> Heavy, prolonged rain saturates the soil with water. This can cause soil erosion (topsoil washed away) and mudslides on slopes. Plants may struggle if roots are waterlogged and cannot get oxygen.','<strong>(2) Plant life:</strong> Some plants flourish with extra moisture (water-loving species). Others may experience root rot if water sits too long. Seeds may wash away. Fungal growth (mold, mildew) on plants increases in wet conditions.','<strong>(3) Local stream:</strong> Water levels rise significantly — flooding may occur along the banks. The stream carries more sediment (muddy water). Floodwaters can deposit rich sediment on floodplains, which actually enriches soil there long-term.'],
+      final:'Heavy rain: erodes soil, floods stream banks, helps some plants but harms others (root rot). Long-term: nutrient-rich sediment deposited on floodplains.'
+    }
+  ],
+  '5.2.B_sci': [
+    { type:'mc', text:'A scientist graphs average ocean temperatures over 50 years and sees a steady upward slope. What does this data pattern show?',
+      options:[{l:'A',t:'Ocean temperatures are decreasing'},{l:'B',t:'Ocean temperatures have no pattern'},{l:'C',t:'Ocean temperatures are increasing over time — a warming trend'},{l:'D',t:'The graph is wrong'}],
+      answer:2,
+      steps:['A steady upward slope on a graph means the value is <strong>increasing over time</strong>.','50 years of data represents a significant long-term trend.','This is a warming trend in ocean temperatures — consistent with climate science data.','The pattern allows scientists to make predictions: if the trend continues, temperatures will continue to rise.'],
+      final:'Answer: C — An upward slope over 50 years shows a long-term warming trend in ocean temperatures.'
+    },
+    { type:'mc', text:'Which type of graph is BEST for showing how monthly rainfall amounts change over one year?',
+      options:[{l:'A',t:'Pie chart'},{l:'B',t:'Line graph'},{l:'C',t:'Bar graph'},{l:'D',t:'Either B or C — both work for this data'}],
+      answer:3,
+      steps:['A <strong>line graph</strong> shows continuous change over time — excellent for rainfall over a year.','A <strong>bar graph</strong> shows discrete (separate) values per category (month) — also works well here.','A pie chart shows parts of a whole (percentages) — not ideal for change over time.','Both line and bar graphs are appropriate for monthly rainfall data. Most scientists prefer bar graphs for this specific use.'],
+      final:'Answer: D — Both line graphs and bar graphs work; bar graphs are commonly used for monthly comparisons.'
+    },
+    { type:'oe', text:'A data table shows average monthly temperatures for a city. How would you analyze this data to identify seasonal patterns?',
+      steps:['<strong>Step 1:</strong> Look at the highest and lowest values — when do they occur? (Peak in July-August = summer high; lowest in January = winter low)','<strong>Step 2:</strong> Calculate the temperature range: highest month minus lowest month.','<strong>Step 3:</strong> Group by season (Dec-Feb = winter, Mar-May = spring, etc.) and find seasonal averages.','<strong>Step 4:</strong> Describe the pattern: "Temperatures rise from January through July, then decrease from July through December, showing a typical seasonal cycle driven by Earth\'s tilt and the Sun\'s angle."','<strong>Step 5:</strong> Predict: based on this pattern, what temperatures would you expect next January?'],
+      final:'Analyze by finding highs/lows, calculating ranges, grouping by season, and describing the cyclical pattern. Prediction: next year should follow a similar seasonal curve.'
+    }
+  ]
+};
+
+/* ═══════════════════════════════════════════════════════
+   PANEL SWITCHING
+═══════════════════════════════════════════════════════ */
+function switchPanel(name, navEl) {
+  // Hide search
+  document.getElementById('searchPanel').classList.remove('active');
+  document.getElementById('globalSearch').value = '';
+
+  // Show correct panel
+  ['math','science','tips','resources'].forEach(p => {
+    document.getElementById(p+'Panel').classList.toggle('active', p === name);
+  });
+
+  // Update nav-tabs
+  document.querySelectorAll('.nav-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.panel === name);
+  });
+
+  // Update subject-nav buttons
+  ['math','science','tips','resources'].forEach(p => {
+    const btn = document.getElementById(p+'Btn');
+    if (btn) {
+      btn.className = 'subj-btn';
+      if (p === name) {
+        btn.classList.add(p === 'math' ? 'active-math' : p === 'science' ? 'active-science' : 'active-math');
+      }
+    }
+  });
+
+  window.scrollTo({top: document.getElementById('subjectNav').offsetTop - 60, behavior:'smooth'});
+}
+
+/* ═══════════════════════════════════════════════════════
+   RENDER TEKS CARDS
+═══════════════════════════════════════════════════════ */
+function missedColor(pct) {
+  if (pct >= 50) return {bar:'miss-high-bar', badge:'miss-high', label:'High priority'};
+  if (pct >= 30) return {bar:'miss-medium-bar', badge:'miss-medium', label:'Medium priority'};
+  return {bar:'miss-low-bar', badge:'miss-low', label:'Lower priority'};
+}
+
+function createCard(teks, index) {
+  const mc = missedColor(teks.missedPct);
+  const card = document.createElement('div');
+  card.className = 'teks-card';
+  card.style.animationDelay = (index * 0.05) + 's';
+  card.setAttribute('data-teks', teks.code);
+  card.setAttribute('data-name', teks.name.toLowerCase());
+  card.setAttribute('data-desc', teks.desc.toLowerCase());
+  card.onclick = () => openModal(teks);
+  card.innerHTML = `
+    <div class="teks-card-top">
+      <div class="teks-badge ${teks.badge}">${teks.code}</div>
+      <div class="teks-card-info">
+        <div class="teks-card-name">${teks.name}</div>
+        <div class="teks-card-desc">${teks.desc}</div>
+      </div>
+    </div>
+    <div class="teks-card-footer">
+      <div>
+        <div class="teks-card-footer-label">Class missed rate</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+          <div style="width:80px;height:6px;background:#e2d9cc;border-radius:3px;overflow:hidden">
+            <div class="${mc.bar}" style="height:100%;width:${teks.missedPct}%;border-radius:3px;transition:width 1s"></div>
+          </div>
+          <span class="tag ${mc.badge}" style="padding:2px 8px;font-size:10px">${teks.missedPct}% missed</span>
+        </div>
+      </div>
+      <div class="teks-card-arrow">→</div>
+    </div>`;
+  return card;
+}
+
+function renderCards(gridId, teksArr, domainFilter) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  grid.innerHTML = '';
+  const filtered = teksArr.filter(t => t.domain === domainFilter);
+  filtered.forEach((t, i) => grid.appendChild(createCard(t, i)));
+}
+
+// Render all grids
+renderCards('mathGrid1', MATH_TEKS, 1);
+renderCards('mathGrid2', MATH_TEKS, 2);
+renderCards('mathGrid3', MATH_TEKS, 3);
+renderCards('sciGrid1', SCI_TEKS, 1);
+renderCards('sciGrid2', SCI_TEKS, 2);
+renderCards('sciGrid3', SCI_TEKS, 3);
+renderCards('sciGrid4', SCI_TEKS, 4);
+
+/* ═══════════════════════════════════════════════════════
+   MODAL — LEARN TAB + PRACTICE TAB
+═══════════════════════════════════════════════════════ */
+let currentTeks = null;
+
+function switchModalTab(tab, btn) {
+  document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.modal-tab-content').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('modal' + (tab === 'learn' ? 'Learn' : 'Practice') + 'Tab').classList.add('active');
+  if (tab === 'practice' && currentTeks) renderPractice(currentTeks);
+}
+
+function openModal(teks) {
+  currentTeks = teks;
+  const mc = missedColor(teks.missedPct);
+  const badgeColors = {
+    'math-badge':      {bg:'#dbeafe',color:'#1e40af'},
+    'sci-inv-badge':   {bg:'#e0f4f4',color:'#0e6b6b'},
+    'sci-nrg-badge':   {bg:'#fdf0d8',color:'#d4820a'},
+    'sci-eco-badge':   {bg:'#e4f4ec',color:'#1a6b4a'},
+    'sci-earth-badge': {bg:'#f0eafb',color:'#5b3591'},
+  };
+  const bc = badgeColors[teks.badge] || {bg:'#e2e8f0',color:'#1a2e4a'};
+
+  document.getElementById('modalCode').textContent = teks.code;
+  document.getElementById('modalCode').style.background = bc.bg;
+  document.getElementById('modalCode').style.color = bc.color;
+  document.getElementById('modalTitle').textContent = teks.name;
+  document.getElementById('modalSubject').textContent = teks.subject;
+
+  // Reset tabs to Learn
+  document.querySelectorAll('.modal-tab').forEach((t,i) => t.classList.toggle('active', i===0));
+  document.getElementById('modalLearnTab').classList.add('active');
+  document.getElementById('modalPracticeTab').classList.remove('active');
+
+  const tipsHtml = teks.tips.map(t => `
+    <li class="tip-item">
+      <span class="tip-check">✓</span>
+      <span class="tip-text">${t}</span>
+    </li>`).join('');
+
+  document.getElementById('modalLearnBody').innerHTML = `
+    <div class="missed-bar-wrap">
+      <div class="missed-bar-label">
+        <span>Class missed rate for this standard</span>
+        <span style="font-weight:700">${teks.missedPct}%</span>
+      </div>
+      <div class="missed-bar-track">
+        <div class="missed-bar-fill ${mc.bar}" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="modal-section sec-what">
+      <div class="modal-section-label">📘 What is this standard?</div>
+      <div class="modal-section-body">${teks.what}</div>
+    </div>
+    <div class="modal-section sec-example">
+      <div class="modal-section-label">🌍 Real-world example</div>
+      <div class="modal-section-body">${teks.example}</div>
+    </div>
+    <div class="modal-section sec-why">
+      <div class="modal-section-label">💡 Why it matters</div>
+      <div class="modal-section-body">${teks.why}</div>
+    </div>
+    <div style="margin-bottom:20px">
+      <div class="modal-section-h">🏠 How you can help at home</div>
+      <ul class="tip-list">${tipsHtml}</ul>
+    </div>
+    <div class="try-this-box">
+      <div class="try-this-label">⭐ Try This Tonight</div>
+      <div class="try-this-text">${teks.tryThis}</div>
+    </div>
+  `;
+
+  // Clear practice tab
+  document.getElementById('modalPracticeBody').innerHTML = '';
+
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  setTimeout(() => {
+    const fill = document.querySelector('#modalLearnBody .missed-bar-fill');
+    if (fill) fill.style.width = teks.missedPct + '%';
+  }, 150);
+}
+
+/* ── RESOLVE QUESTION KEY ── */
+function getQuestions(teks) {
+  // Try direct code match, then try with _math or _sci suffix
+  return QUESTIONS[teks.code] ||
+         QUESTIONS[teks.code + '_math'] ||
+         QUESTIONS[teks.code + '_sci'] ||
+         null;
+}
+
+/* ── RENDER PRACTICE TAB ── */
+function renderPractice(teks) {
+  const body = document.getElementById('modalPracticeBody');
+  if (body.dataset.rendered === teks.code) return; // already rendered
+  body.dataset.rendered = teks.code;
+
+  const qs = getQuestions(teks);
+  if (!qs) {
+    body.innerHTML = `<div style="text-align:center;padding:40px;color:var(--muted)">
+      <div style="font-size:36px;margin-bottom:12px">🔧</div>
+      <p>Practice questions for <strong>${teks.code}</strong> coming soon!</p>
+    </div>`;
+    return;
+  }
+
+  body.innerHTML = `
+    <div style="background:var(--cream2);border-radius:var(--r-sm);padding:14px 16px;margin-bottom:20px;font-size:14px;color:var(--muted)">
+      <strong style="color:var(--navy)">✏️ ${qs.length} Practice Questions</strong> — Click an answer choice to check it, or tap <em>"Show Answer Key"</em> to see the full step-by-step solution.
+    </div>
+    ${qs.map((q, i) => renderQuestion(q, i, teks.code)).join('')}
+  `;
+}
+
+function renderQuestion(q, i, teksCode) {
+  const qid = `q_${teksCode}_${i}`.replace(/[^a-z0-9_]/gi,'_');
+  const typeBadge = q.type === 'mc' ? '<span class="question-type-badge qtype-mc">Multiple Choice</span>' :
+                    q.type === 'oe' ? '<span class="question-type-badge qtype-oe">Open Ended</span>' :
+                    '<span class="question-type-badge qtype-fr">Short Answer</span>';
+
+  const optionsHtml = q.type === 'mc' ? `
+    <div class="mc-options" id="opts_${qid}">
+      ${q.options.map((opt, j) => `
+        <button class="mc-option" onclick="checkAnswer('${qid}',${j},${q.answer})">
+          <span class="mc-letter">${opt.l}</span>
+          <span>${opt.t}</span>
+        </button>`).join('')}
+    </div>` :
+    `<div style="background:var(--cream);border-radius:var(--r-sm);padding:12px 16px;margin-top:10px;font-size:13px;color:var(--muted);font-style:italic">
+      Write your answer on paper, then tap "Show Answer Key" below to compare ↓
+    </div>`;
+
+  const stepsHtml = q.steps.map((s, si) => `
+    <div class="answer-step">
+      <div class="step-num">${si+1}</div>
+      <div class="step-text">${s}</div>
+    </div>`).join('');
+
+  return `
+    <div class="question-card">
+      <div class="question-top">
+        <div>
+          <span class="question-num">${i+1}</span>${typeBadge}
+        </div>
+        <div class="question-text">${q.text}</div>
+        ${optionsHtml}
+      </div>
+      <button class="answer-key-toggle" id="toggle_${qid}" onclick="toggleAnswer('${qid}')">
+        <span>🔑 Show Answer Key & Step-by-Step Explanation</span>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="answer-key-body" id="body_${qid}">
+        <div class="answer-correct-label">✅ Answer & Explanation</div>
+        <div class="answer-steps">${stepsHtml}</div>
+        <div class="answer-final">${q.final}</div>
+      </div>
+    </div>`;
+}
+
+function checkAnswer(qid, chosen, correct) {
+  const opts = document.querySelectorAll(`#opts_${qid} .mc-option`);
+  opts.forEach((btn, i) => {
+    btn.onclick = null; // disable after first click
+    if (i === correct) btn.classList.add('reveal');
+    else if (i === chosen) btn.classList.add('wrong');
+  });
+  // Auto-show answer key
+  const body = document.getElementById('body_' + qid);
+  const toggle = document.getElementById('toggle_' + qid);
+  if (body && !body.classList.contains('open')) {
+    body.classList.add('open');
+    toggle.classList.add('revealed');
+    toggle.querySelector('span:first-child').textContent = '🔑 Answer Key (click to close)';
+  }
+}
+
+function toggleAnswer(qid) {
+  const body = document.getElementById('body_' + qid);
+  const toggle = document.getElementById('toggle_' + qid);
+  const isOpen = body.classList.toggle('open');
+  toggle.classList.toggle('revealed', isOpen);
+  toggle.querySelector('span:first-child').textContent = isOpen
+    ? '🔑 Answer Key (click to close)'
+    : '🔑 Show Answer Key & Step-by-Step Explanation';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  currentTeks = null;
+  // Reset practice tab render flag
+  const pb = document.getElementById('modalPracticeBody');
+  if (pb) pb.dataset.rendered = '';
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL SEARCH
+═══════════════════════════════════════════════════════ */
+function handleSearch(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) {
+    document.getElementById('searchPanel').classList.remove('active');
+    document.getElementById('mathPanel').classList.add('active');
+    document.querySelectorAll('.nav-tab').forEach(b => b.classList.toggle('active', b.dataset.panel === 'math'));
+    return;
+  }
+
+  // Hide all panels, show search
+  ['math','science','tips','resources'].forEach(p => {
+    document.getElementById(p+'Panel').classList.remove('active');
+  });
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('searchPanel').classList.add('active');
+
+  const ALL_TEKS = [...MATH_TEKS, ...SCI_TEKS];
+  const results = ALL_TEKS.filter(t =>
+    t.code.toLowerCase().includes(q) ||
+    t.name.toLowerCase().includes(q) ||
+    t.desc.toLowerCase().includes(q) ||
+    t.what.toLowerCase().includes(q) ||
+    t.subject.toLowerCase().includes(q)
+  );
+
+  document.getElementById('searchStatus').innerHTML =
+    `Found <strong>${results.length}</strong> standard${results.length!==1?'s':''} matching "<strong>${query}</strong>"`;
+
+  const grid = document.getElementById('searchGrid');
+  grid.innerHTML = '';
+  results.forEach((t, i) => grid.appendChild(createCard(t, i)));
+
+  if (results.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted)">
+      <div style="font-size:48px;margin-bottom:16px">🔍</div>
+      <p style="font-size:16px">No standards found for "<strong>${query}</strong>"</p>
+      <p style="font-size:14px;margin-top:8px">Try searching by code (e.g., "5.6.B"), topic (e.g., "fractions"), or keyword</p>
+    </div>`;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════════════════ */
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('back-top');
+  btn.classList.toggle('visible', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
